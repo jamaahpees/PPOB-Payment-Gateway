@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Tag, AlertCircle, CheckCircle, Loader2, X, Plus, Minus } from 'lucide-react';
+import { useMidtransSnap } from '../hooks/useMidtransSnap';
+import { buildApiUrl } from '../lib/api';
 
 interface Product {
   id: string;
@@ -49,6 +51,10 @@ interface CheckoutProps {
 const API_BASE = '/api';
 
 export default function Checkout({ product, userRole = 'customer', onClose, onCheckout }: CheckoutProps) {
+  const { pay, isReady: isSnapReady } = useMidtransSnap();
+  const [isInitializingPayment, setIsInitializingPayment] = useState(false);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
+
   const [quantity, setQuantity] = useState(1);
   const [orderItems, setOrderItems] = useState<OrderItem[]>([
     { phone: '', email: '', useSameAsFirst: false }
@@ -197,6 +203,52 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
       if (!response.ok || !result.success) {
         throw new Error(result.error || 'Failed to create order');
       }
+
+      // Initialize payment with Midtrans via POST /api/payments/midtrans/initialize
+      setIsInitializingPayment(true);
+      setPaymentError(null);
+
+      let payToken = '';
+      try {
+        const initResponse = await fetch(buildApiUrl('/payments/midtrans/initialize'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ order_id: result.order.id })
+        });
+
+        const initResult = await initResponse.json();
+
+        if (!initResponse.ok || !initResult.success) {
+          throw new Error(initResult.error || 'Failed to initialize payment');
+        }
+
+        payToken = initResult.token;
+      } catch (payErr: any) {
+        console.error('Payment initialization error:', payErr);
+        setPaymentError(payErr.message || 'Gagal menginisialisasi pembayaran Midtrans');
+        setIsInitializingPayment(false);
+        return;
+      }
+
+      setIsInitializingPayment(false);
+
+      const invoiceCode = result.order.invoice_code;
+
+      pay(payToken, {
+        onSuccess: (snapRes) => {
+          window.location.hash = `#/invoice/${invoiceCode}`;
+        },
+        onPending: (snapRes) => {
+          window.location.hash = `#/invoice/${invoiceCode}`;
+        },
+        onError: (snapErr) => {
+          console.error('Midtrans Snap error:', snapErr);
+          setPaymentError('Terjadi kesalahan saat memproses pembayaran.');
+        },
+        onClose: () => {
+          window.location.hash = `#/invoice/${invoiceCode}`;
+        }
+      });
 
       // Pass order data to parent
       onCheckout({
@@ -450,6 +502,16 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
           </div>
 
           {/* Price Summary */}
+          {paymentError && (
+            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 flex items-start gap-3">
+              <AlertCircle className="text-red-400 mt-1" size={20} />
+              <div>
+                <p className="font-bold text-red-400">Payment Error</p>
+                <p className="text-sm text-slate-300 mt-1">{paymentError}</p>
+              </div>
+            </div>
+          )}
+
           <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 space-y-3">
             <h3 className="font-bold text-white mb-4">Payment Summary</h3>
             
@@ -488,10 +550,17 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
           {/* Checkout Button */}
           <button
             onClick={handleCheckout}
-            disabled={orderItems.some(item => !item.phone.trim())}
-            className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-slate-700 disabled:to-slate-700 disabled:text-slate-500 text-white font-black rounded-xl transition text-lg"
+            disabled={orderItems.some(item => !item.phone.trim()) || isInitializingPayment}
+            className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-slate-700 disabled:to-slate-700 disabled:text-slate-500 text-white font-black rounded-xl transition text-lg flex items-center justify-center gap-2"
           >
-            Complete Purchase ({quantity} {quantity > 1 ? 'items' : 'item'})
+            {isInitializingPayment ? (
+              <>
+                <Loader2 className="animate-spin" size={20} />
+                Initializing Payment...
+              </>
+            ) : (
+              `Complete Purchase (${quantity} ${quantity > 1 ? 'items' : 'item'})`
+            )}
           </button>
         </div>
       </div>
