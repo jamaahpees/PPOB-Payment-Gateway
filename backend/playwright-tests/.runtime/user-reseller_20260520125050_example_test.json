@@ -1,0 +1,22 @@
+{
+  "email": "reseller+20260520125050@example.test",
+  "password": "Test20260520125050!",
+  "session": {
+    "user": {
+      "id": "f4de880a-8ad9-4731-b935-53c1144a3dce",
+      "email": "reseller+20260520125050@example.test",
+      "role": "pengguna",
+      "is_reseller_active": false,
+      "reseller_status": "none",
+      "email_verified": false,
+      "email_verified_at": null,
+      "name": "",
+      "phone_number": "",
+      "has_pin": false,
+      "created_at": "2026-05-20T12:50:52.271Z",
+      "updated_at": "2026-05-20T12:50:52.271Z"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlc2VsbGVyKzIwMjYwNTIwMTI1MDUwQGV4YW1wbGUudGVzdCIsInJvbGUiOiJwZW5nZ3VuYSIsImlhdCI6MTc3OTI4MTQ1NSwiZXhwIjoxNzc5Mjg1MDU1LCJzdWIiOiJmNGRlODgwYS04YWQ5LTQ3MzEtYjkzNS01M2MxMTQ0YTNkY2UifQ.nfhmI_4qjYyRgSVTSa7xdTH3G0DzXGJqHbEUIB3TdKs",
+    "expires_in": "1h"
+  }
+}

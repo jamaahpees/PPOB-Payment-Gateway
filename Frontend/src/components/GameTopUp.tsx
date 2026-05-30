@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { AlertCircle, CheckCircle2, ExternalLink, Gamepad2, Loader2, RefreshCw, Search, Zap } from 'lucide-react';
 
 import { buildApiUrl, readApiError } from '../lib/api';
+import { useMidtransSnap } from '../hooks/useMidtransSnap';
 
 function formatRupiah(amountMinor: number) {
   return 'Rp ' + amountMinor.toLocaleString('id-ID');
@@ -294,6 +295,11 @@ export default function GameTopUp() {
   const [orderResult, setOrderResult] = useState<OrderResponse | null>(null);
   const [paymentResult, setPaymentResult] = useState<PaymentResponse | null>(null);
 
+  // Midtrans Snap
+  const { pay, isReady: isSnapReady } = useMidtransSnap();
+  const [isPaying, setIsPaying] = useState(false);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
+
   useEffect(() => {
     let isMounted = true;
 
@@ -419,6 +425,31 @@ export default function GameTopUp() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     void submitCheckout();
+  };
+
+  const handlePay = (token: string) => {
+    setIsPaying(true);
+    setPaymentError(null);
+
+    pay(token, {
+      onSuccess: () => {
+        setIsPaying(false);
+        window.location.hash = `#/invoice/${orderResult?.invoice_code}`;
+      },
+      onPending: () => {
+        setIsPaying(false);
+        window.location.hash = `#/invoice/${orderResult?.invoice_code}`;
+      },
+      onError: (err) => {
+        setIsPaying(false);
+        setPaymentError('Pembayaran gagal. Silakan coba beberapa saat lagi.');
+        console.error('Midtrans Error:', err);
+      },
+      onClose: () => {
+        setIsPaying(false);
+        setPaymentError('Pembayaran dibatalkan oleh pengguna.');
+      }
+    });
   };
 
   return (
@@ -641,16 +672,32 @@ export default function GameTopUp() {
                     <dd data-testid="payment-status" className="font-bold text-slate-900">{paymentStatus}</dd>
                   </div>
                 </dl>
-                {paymentResult?.redirect_url && (
-                  <a
-                    href={paymentResult.redirect_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-slate-800"
-                  >
-                    Lanjut ke Midtrans
-                    <ExternalLink size={13} />
-                  </a>
+                {paymentResult && (
+                  <div className="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <h3 className="text-sm font-bold text-slate-700 mb-2">Selesaikan Pembayaran</h3>
+                    <p className="text-xs text-slate-500 mb-4">Silakan klik tombol di bawah untuk membayar menggunakan Midtrans Snap.</p>
+
+                    {paymentError && (
+                      <div className="mb-4 text-xs font-semibold text-rose-600 bg-rose-50 p-3 rounded-lg">
+                        {paymentError}
+                      </div>
+                    )}
+
+                    <button
+                      onClick={() => handlePay(paymentResult.token)}
+                      disabled={isPaying || !isSnapReady}
+                      className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white rounded-xl font-bold transition-all text-sm flex items-center justify-center gap-2"
+                    >
+                      {isPaying ? (
+                        <>
+                          <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
+                          Memproses Pembayaran...
+                        </>
+                      ) : (
+                        'Bayar Sekarang'
+                      )}
+                    </button>
+                  </div>
                 )}
               </div>
             )}

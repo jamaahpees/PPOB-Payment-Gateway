@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  Γ£ô  1 playwright-tests\test-simulations\reseller-payout.spec.ts:5:7 ΓÇ║ Reseller Payout Simulation ΓÇ║ complete 10-step payout request flow (14.6s)
+
+  1 passed (18.4s)

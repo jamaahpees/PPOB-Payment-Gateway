@@ -1,0 +1,18 @@
+simulation=reseller-payout timestamp=2026-05-23T09:25:38.613Z
+created_reseller_user reseller+20260523092518@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T09:26:37.357Z
+created_reseller_user reseller+20260523092625@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T09:28:01.683Z
+created_reseller_user reseller+20260523092749@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true

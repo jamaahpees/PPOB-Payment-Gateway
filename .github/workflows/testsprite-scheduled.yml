@@ -1,0 +1,32 @@
+name: TestSprite Scheduled Validation
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 08:00 WIB daily
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        run: cd mcp/adnanpay-testsprite && npm install
+        
+      - name: Run TestSprite MCP
+        run: |
+          echo "Running TestSprite validation..."
+          node mcp/adnanpay-testsprite/index.js
+        
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testsprite-results
+          path: .sisyphus/evidence/
+          retention-days: 30

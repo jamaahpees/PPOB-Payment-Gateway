@@ -1,0 +1,395 @@
+
+> ppob-backend@1.0.0 lint
+> eslint "src/**/*.ts"
+
+
+D:\coding\1.PPOB PAYMENT\backend\src\app.ts
+    1:24  error  'Request' is defined but never used                        @typescript-eslint/no-unused-vars
+   47:43  error  'InvoiceStatusService' is defined but never used           @typescript-eslint/no-unused-vars
+   52:52  error  'DigiflazzPriceListSyncService' is defined but never used  @typescript-eslint/no-unused-vars
+  195:62  error  Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+  377:15  error  Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\middleware\auth.middleware.ts
+  11:3   error  ES2015 module syntax is preferred over namespaces  @typescript-eslint/no-namespace
+  42:12  error  'error' is defined but never used                  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\admin\admin.router.ts
+  8:10  error  'requireAuth' is defined but never used   @typescript-eslint/no-unused-vars
+  8:23  error  'requireRole' is defined but never used   @typescript-eslint/no-unused-vars
+  9:10  error  'adminLimiter' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\audit\provider-audit.repository.ts
+  125:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  170:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  173:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  198:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\audit\provider-audit.router.ts
+  50:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\auth\auth.repository.ts
+  14:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  89:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:14  error  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\auth\auth.router.test.ts
+  173:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  226:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\auth\auth.router.ts
+  299:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\auth\auth.types.ts
+  14:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\catalog\catalog.router.ts
+   53:10  error  'sendValidationError' is defined but never used               @typescript-eslint/no-unused-vars
+  104:12  error  'error' is defined but never used                             @typescript-eslint/no-unused-vars
+  282:10  error  'validateTrustedPricePayload' is defined but never used       @typescript-eslint/no-unused-vars
+  298:10  error  'validateCreateProductPayload' is defined but never used      @typescript-eslint/no-unused-vars
+  312:10  error  'validateUpdateProductPayload' is defined but never used      @typescript-eslint/no-unused-vars
+  333:10  error  'validateCreatePricingRulePayload' is defined but never used  @typescript-eslint/no-unused-vars
+  352:10  error  'validateUpdatePricingRulePayload' is defined but never used  @typescript-eslint/no-unused-vars
+  398:21  error  Unexpected any. Specify a different type                      @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\catalog\mysql-catalog.repository.ts
+    2:15  error  'AuthUserRole' is defined but never used               @typescript-eslint/no-unused-vars
+    5:8   error  'SupabaseCatalogRepository' is defined but never used  @typescript-eslint/no-unused-vars
+   30:32  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   35:16  error  'e' is defined but never used                          @typescript-eslint/no-unused-vars
+   60:21  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   65:26  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   73:26  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  111:33  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  122:19  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  195:22  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  232:30  error  Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\commission\commission.repository.ts
+  161:30  error  'options' is defined but never used       @typescript-eslint/no-unused-vars
+  167:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  177:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  192:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\commission\commission.router.test.ts
+  1:32  error  'beforeEach' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\commission\commission.service.ts
+  3:8  error  'CommissionRecord' is defined but never used    @typescript-eslint/no-unused-vars
+  4:8  error  'DiscountCodeRecord' is defined but never used  @typescript-eslint/no-unused-vars
+  5:8  error  'ReferralCodeRecord' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\dashboard\dashboard-content.repository.ts
+    6:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+    7:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+    7:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+    8:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+    8:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   12:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   13:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   14:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   14:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   18:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   19:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   19:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   20:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   20:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   24:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   25:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   25:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   26:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   26:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   30:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   31:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   31:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   32:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   32:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   36:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   37:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   37:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   54:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   65:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   76:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   76:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   87:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   87:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  120:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  120:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  153:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  164:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  164:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  175:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  175:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  197:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  208:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  208:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  219:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  219:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  241:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  252:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  252:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  263:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  263:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  285:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  296:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  296:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  307:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  307:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\fulfillment\fulfillment.repository.ts
+  3:10  error  'InMemoryOrderRepository' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\fulfillment\fulfillment.router.test.ts
+  434:11  error  'fulfillment' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\fulfillment\fulfillment.router.ts
+  21:10  error  'extractOrderId' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\fulfillment\fulfillment.service.ts
+   10:15  error  'OrderRepository' is defined but never used        @typescript-eslint/no-unused-vars
+  385:13  error  'transitioned' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\invoice-status\invoice-status.router.test.ts
+  21:9  error  'invoiceStatusService' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\order\order.repository.ts
+  138:7  error  The value assigned to 'mappedStatus' is not used in subsequent statements  no-useless-assignment
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\order\order.router.ts
+  8:15  error  'CreateGuestOrderInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\order\order.service.ts
+  7:3  error  'OrderTransitionError' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\payment\payment.repository.ts
+  3:10  error  'InMemoryOrderRepository' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\payout\payout.repository.ts
+  213:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  224:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  293:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  314:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  340:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  354:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\payout\payout.router.ts
+  11:62  error  'next' is defined but never used          @typescript-eslint/no-unused-vars
+  17:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  23:89  error  'next' is defined but never used          @typescript-eslint/no-unused-vars
+  60:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:63  error  'next' is defined but never used          @typescript-eslint/no-unused-vars
+  76:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\regression\fraud-matrix.regression.test.ts
+   23:9   error  'authRepository' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   33:9   error  'catalogService' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   37:9   error  'paymentService' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   46:9   error  'fulfillmentService' is assigned a value but never used    @typescript-eslint/no-unused-vars
+   57:9   error  'invoiceStatusService' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  141:18  error  'orderRepository' is assigned a value but never used       @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\regression\lifecycle.regression.test.ts
+  136:9  error  'invoiceStatusService' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\regression\rbac-public-routes.regression.test.ts
+  64:9  error  'invoiceStatusService' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\modules\tax\tax.service.ts
+  27:13  error  'taxAllocationMinor' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\coding\1.PPOB PAYMENT\backend\src\routes\dashboard.router.ts
+   37:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   46:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   56:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   66:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   79:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   88:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   98:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  121:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  130:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  139:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  148:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  161:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  170:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  179:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  188:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  201:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  210:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  219:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  228:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  241:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  250:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  259:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  268:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\routes\order.router.ts
+   14:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   28:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   29:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   36:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   36:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   70:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  186:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  239:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  320:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\routes\voucher.router.ts
+   1:37  error  'NextFunction' is defined but never used  @typescript-eslint/no-unused-vars
+  21:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\analyze-products.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\analyze-products.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\auto-import-all.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\auto-import-all.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\batch-execution-plan.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\batch-execution-plan.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\batch-import-loop.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\batch-import-loop.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\create-mega-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\create-mega-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\create-mini-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\create-mini-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\download-product-images.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\download-product-images.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\execute-all-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\execute-all-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\execute-all-chunks.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\execute-all-chunks.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\execute-import-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\execute-import-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\execute-mini-batch.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\execute-mini-batch.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\generate-csv.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\generate-csv.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\generate-final-sql.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\generate-final-sql.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\generate-import-sql.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\generate-import-sql.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\generate-sql-from-structured.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\generate-sql-from-structured.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\generate-structured-sql.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\generate-structured-sql.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\get-chunks.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\get-chunks.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\import-all-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\import-all-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\import-digiflazz-products.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\import-digiflazz-products.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\import-plan.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\import-plan.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\list-chunks.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\list-chunks.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\list-import-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\list-import-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\prepare-import.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\prepare-import.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\print-all-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\print-all-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\restructure-existing-data.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\restructure-existing-data.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\scrape-automation-plan.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\scrape-automation-plan.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\scrape-digiflazz-full.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\scrape-digiflazz-full.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\scrape-digiflazz-products.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\scrape-digiflazz-products.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\show-import-guide.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\show-import-guide.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\show-mega-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\show-mega-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\show-mini-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\show-mini-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\split-batch-001.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\split-batch-001.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\split-sql-batches.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\split-sql-batches.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\scripts\verify-no-duplicates.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src\scripts\verify-no-duplicates.ts
+
+D:\coding\1.PPOB PAYMENT\backend\src\services\product-cache.service.ts
+    5:13  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   16:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   72:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  114:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Γ£û 218 problems (218 errors, 0 warnings)
+

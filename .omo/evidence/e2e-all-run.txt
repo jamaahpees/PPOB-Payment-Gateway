@@ -1,0 +1,472 @@
+
+Running 19 tests using 4 workers
+
+[Cek Saldo Response] {
+  "data": {
+    "deposit": 17405
+  }
+}
+  Γ£ô   2 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:31:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 1. Check Digiflazz Balance (Cek Saldo) (1.1s)
+[Price List Response] Total products: [33m5[39m
+  Γ£ô   5 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:55:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 2. Get Price List (all products) (180ms)
+[Price List xld10 Response] {
+  "data": null
+}
+[xld10] Products found: [33m0[39m
+[Snap Token Response] {
+  "token": "a06d6ef9-66b7-497e-b078-0d9bc5e6f15d",
+  "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/a06d6ef9-66b7-497e-b078-0d9bc5e6f15d"
+}
+  Γ£ô   6 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:77:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 3. Get Price List - filter by code xld10 (120ms)
+  Γ£ô   1 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:27:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 1. Create Snap Token (1.5s)
+[BCA Transfer Response] {
+  "status_code": "402",
+  "status_message": "Payment channel is not activated.",
+  "id": "064c7f95-729d-4e8b-8e43-1271fb5871bd"
+}
+  Γ£ÿ   8 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:71:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 2. Charge - Bank Transfer BCA (212ms)
+[BRI Transfer Response] {
+  "status_code": "402",
+  "status_message": "Payment channel is not activated.",
+  "id": "5cff3ff9-3f67-47de-9ea0-26ec42c40f4f"
+}
+  Γ£ÿ   9 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:104:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 3. Charge - Bank Transfer BRI (425ms)
+[Topup SUCCESS Response] {
+  "data": {
+    "ref_id": "TEST-1779543647917-189a9xnl4",
+    "customer_no": "087800001230",
+    "buyer_sku_code": "xld10",
+    "message": "IP Anda tidak kami kenali: 180.241.29.156",
+    "status": "Gagal",
+    "rc": "45",
+    "sn": ""
+  }
+}
+  Γ£ÿ   7 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:101:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 4. Topup - Test Case SUCCESS (087800001230) (3.3s)
+[Network Response] 200 GET https://demo.hanzserver.online/api/catalog/products?page=1&limit=24
+[Browser Console Error] Failed to load resource: the server responded with a status of 404 () at https://demo.hanzserver.online/product-images/go-pay.png:0
+[BNI Transfer Response] {
+  "status_code": "402",
+  "status_message": "Payment channel is not activated.",
+  "id": "48f4ecd0-8ae2-413d-9e21-662d7fc23be2"
+}
+  Γ£ÿ  10 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:135:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 4. Charge - Bank Transfer BNI (1.2s)
+[Topup FAILED Response] {
+  "data": {
+    "ref_id": "TEST-1779543654200-vuut09d82",
+    "customer_no": "087800001232",
+    "buyer_sku_code": "xld10",
+    "message": "IP Anda tidak kami kenali: 180.241.29.156",
+    "status": "Gagal",
+    "rc": "45",
+    "sn": ""
+  }
+}
+  Γ£ÿ  11 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:130:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 5. Topup - Test Case FAILED (087800001232) (2.2s)
+[GoPay Response] {
+  "status_code": "404",
+  "status_message": "Merchant pop id is not found",
+  "id": "6020f110-73e7-4091-95d7-b77ba435d82a"
+}
+[Topup PENDING Response] {
+  "data": {
+    "ref_id": "TEST-1779543666390-9rkpet41b",
+    "customer_no": "087800001233",
+    "buyer_sku_code": "xld10",
+    "message": "IP Anda tidak kami kenali: 180.241.29.156",
+    "status": "Gagal",
+    "rc": "45",
+    "sn": ""
+  }
+}
+  Γ£ô   3 playwright-tests\test-simulations\reseller-payout.spec.ts:5:7 ΓÇ║ Reseller Payout Simulation ΓÇ║ complete 10-step payout request flow (18.7s)
+  Γ£ÿ  12 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:166:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 5. Charge - GoPay (3.1s)
+  Γ£ÿ  13 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:158:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 6. Topup - Test Case PENDING (087800001233) - expect Pending then Callback (2.4s)
+[Credit Card Accept Response] {
+  "status_code": "402",
+  "status_message": "Payment channel is not activated.",
+  "id": "21917bbc-02af-4123-a438-95b0a13d6a68"
+}
+  Γ£ô  15 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:198:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 6. Charge - Credit Card (Accept Transaction) (3.0s)
+[Network Response] 200 GET https://demo.hanzserver.online/api/account/status
+[Created Order ID] TEST-1779543678381-6oajdrffm
+[Network Response] 200 GET https://demo.hanzserver.online/api/catalog/products?page=1&limit=24
+[Network Response] 200 GET https://demo.hanzserver.online/api/auth/me
+[Transaction Status Response] {
+  "status_code": "404",
+  "status_message": "Transaction doesn't exist.",
+  "id": "f399d9f6-d944-452f-927d-65ade0040055"
+}
+[Browser Console Error] Failed to load resource: the server responded with a status of 404 () at https://demo.hanzserver.online/product-images/go-pay.png:0
+[Browser Console ERROR] Failed to load resource: the server responded with a status of 404 ()
+[Topup WITHOUT testing flag] {
+  "data": {
+    "ref_id": "TEST-1779543681152-ggngfo8u0",
+    "customer_no": "087800001230",
+    "buyer_sku_code": "xld10",
+    "message": "IP Anda tidak kami kenali: 180.241.29.156",
+    "status": "Gagal",
+    "rc": "45",
+    "sn": ""
+  }
+}
+  Γ£ÿ  16 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:231:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 7. Get Transaction Status (2.2s)
+  Γ£ÿ  17 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:187:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 7. Topup - Without testing flag (should still work with dev key) (2.7s)
+[Invalid Key Response] {
+  "status_code": "401",
+  "status_message": "Unknown Merchant server_key/id",
+  "id": "ae3c8050-da78-4009-8aa9-dcbecc90eb84"
+}
+  Γ£ô  18 playwright-tests\test-simulations\midtrans-api-direct.spec.ts:276:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 8. Invalid Server Key (should fail) (2.5s)
+[Price List 4NwT49 Response] {
+  "data": [
+    {
+      "product_name": "Go Pay 100.000",
+      "category": "E-Money",
+      "brand": "GO PAY",
+      "type": "Customer",
+      "seller_name": "PT WIJAYA KOMUNIKA PAYMENT",
+      "price": 100875,
+      "buyer_sku_code": "4NwT49",
+      "buyer_product_status": true,
+      "seller_product_status": true,
+      "unlimited_stock": true,
+      "stock": 0,
+      "multi": true,
+      "start_cut_off": "23:29",
+      "end_cut_off": "0:15",
+      "desc": "Masukan no HP"
+    }
+  ]
+}
+  Γ£ô  19 playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:212:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 8. Verify GoPay 100k product (4NwT49) exists in price list (2.4s)
+[Network Response] 200 POST https://demo.hanzserver.online/api/orders/create
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Success] E2E Digiflazz Sandbox checkout simulation passed! Invoice code: ORD-1779543716082-DU78KP
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/invoices/ORD-1779543716082-DU78KP/status
+  Γ£ÿ   4 playwright-tests\test-simulations\digiflazz-sandbox.spec.ts:5:7 ΓÇ║ Digiflazz Sandbox E2E Simulation ΓÇ║ guest checkout with XL 10.000 Sandbox Test product and verify invoice redirection (1.6m)
+[Network Response] 200 POST https://demo.hanzserver.online/api/orders/create
+[Diagnostic] LocalStorage at /invoice: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlc2VsbGVyKzIwMjYwNTIzMTM0MTA4QGV4YW1wbGUudGVzdCIsInJvbGUiOiJwZW5nZ3VuYSIsImlhdCI6MTc3OTU0MzY3NywiZXhwIjoxNzc5NTQ3Mjc3LCJzdWIiOiIxNTRmMTRjMi1kZTc0LTQ3MDAtYTgyNy0wODQ2YTc4YWYxNDkifQ.9JjdrH34RZbogulax0QHqQPgNweJXuJJuTP3poAk854, session=null
+[Diagnostic] LocalStorage at /dashboard (after reload): token=null, session=null
+[Diagnostic] Session lost on /dashboard navigation ΓÇö re-logging in
+[Network Response] 200 POST https://demo.hanzserver.online/api/auth/login
+[Network Response] 200 GET https://demo.hanzserver.online/api/auth/me
+[Network Response] 200 GET https://demo.hanzserver.online/api/catalog/products
+[Network Response] 200 GET https://demo.hanzserver.online/api/account/status
+[Network Response] 200 GET https://demo.hanzserver.online/api/account/transactions
+  Γ£ÿ  14 playwright-tests\test-simulations\reseller-transaction.spec.ts:5:7 ΓÇ║ Reseller Transaction Simulation ΓÇ║ login as reseller, purchase a product, and verify transaction in dashboard (1.8m)
+
+
+  1) playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:101:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 4. Topup - Test Case SUCCESS (087800001230) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      120 |     console.log('[Topup SUCCESS Response]', JSON.stringify(data, null, 2));
+      121 |
+    > 122 |     expect(response.ok()).toBe(true);
+          |                           ^
+      123 |     
+      124 |     // Digiflazz test cases return rc: '00' for success
+      125 |     expect(data.data?.status).toBe('Sukses');
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:122:27
+
+    Error Context: test-results\test-simulations-digiflazz-afd9e--Case-SUCCESS-087800001230-\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-afd9e--Case-SUCCESS-087800001230-\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-digiflazz-afd9e--Case-SUCCESS-087800001230-\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  2) playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:130:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 5. Topup - Test Case FAILED (087800001232) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      149 |     console.log('[Topup FAILED Response]', JSON.stringify(data, null, 2));
+      150 |
+    > 151 |     expect(response.ok()).toBe(true);
+          |                           ^
+      152 |     
+      153 |     // For failed test case, rc is '02' and status is 'Gagal'
+      154 |     expect(data.data?.status).toBe('Gagal');
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:151:27
+
+    Error Context: test-results\test-simulations-digiflazz-05659-t-Case-FAILED-087800001232-\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-05659-t-Case-FAILED-087800001232-\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-digiflazz-05659-t-Case-FAILED-087800001232-\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  3) playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:158:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 6. Topup - Test Case PENDING (087800001233) - expect Pending then Callback 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      177 |     console.log('[Topup PENDING Response]', JSON.stringify(data, null, 2));
+      178 |
+    > 179 |     expect(response.ok()).toBe(true);
+          |                           ^
+      180 |     expect(data.data?.status).toBe('Pending');
+      181 |     expect(data.data?.rc).toBe('03');
+      182 |     
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:179:27
+
+    Error Context: test-results\test-simulations-digiflazz-adc1e-xpect-Pending-then-Callback\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-adc1e-xpect-Pending-then-Callback\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-digiflazz-adc1e-xpect-Pending-then-Callback\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  4) playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:187:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 7. Topup - Without testing flag (should still work with dev key) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      207 |
+      208 |     // With dev key, it should still work
+    > 209 |     expect(response.ok()).toBe(true);
+          |                           ^
+      210 |   });
+      211 |
+      212 |   test('8. Verify GoPay 100k product (4NwT49) exists in price list', async ({ request }) => {
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:209:27
+
+    Error Context: test-results\test-simulations-digiflazz-e2645-ld-still-work-with-dev-key-\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-e2645-ld-still-work-with-dev-key-\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-digiflazz-e2645-ld-still-work-with-dev-key-\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  5) playwright-tests\test-simulations\digiflazz-sandbox.spec.ts:5:7 ΓÇ║ Digiflazz Sandbox E2E Simulation ΓÇ║ guest checkout with XL 10.000 Sandbox Test product and verify invoice redirection 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    attachment #1: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-3853d--verify-invoice-redirection\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\test-simulations-digiflazz-3853d--verify-invoice-redirection\error-context.md
+
+    attachment #3: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-digiflazz-3853d--verify-invoice-redirection\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-digiflazz-3853d--verify-invoice-redirection\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  6) playwright-tests\test-simulations\midtrans-api-direct.spec.ts:71:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 2. Charge - Bank Transfer BCA 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"201"[39m
+    Received: [31m"402"[39m
+
+       96 |
+       97 |     expect(response.ok()).toBe(true);
+    >  98 |     expect(data.status_code).toBe('201');
+          |                              ^
+       99 |     expect(data.transaction_status).toBe('pending');
+      100 |     expect(data.va_numbers).toBeDefined();
+      101 |     expect(data.va_numbers[0].bank).toBe('bca');
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\midtrans-api-direct.spec.ts:98:30
+
+    Error Context: test-results\test-simulations-midtrans--301ad--Charge---Bank-Transfer-BCA\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-midtrans--301ad--Charge---Bank-Transfer-BCA\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-midtrans--301ad--Charge---Bank-Transfer-BCA\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  7) playwright-tests\test-simulations\midtrans-api-direct.spec.ts:104:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 3. Charge - Bank Transfer BRI 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"201"[39m
+    Received: [31m"402"[39m
+
+      129 |
+      130 |     expect(response.ok()).toBe(true);
+    > 131 |     expect(data.status_code).toBe('201');
+          |                              ^
+      132 |     expect(data.va_numbers[0].bank).toBe('bri');
+      133 |   });
+      134 |
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\midtrans-api-direct.spec.ts:131:30
+
+    Error Context: test-results\test-simulations-midtrans--678c5--Charge---Bank-Transfer-BRI\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-midtrans--678c5--Charge---Bank-Transfer-BRI\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-midtrans--678c5--Charge---Bank-Transfer-BRI\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  8) playwright-tests\test-simulations\midtrans-api-direct.spec.ts:135:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 4. Charge - Bank Transfer BNI 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"201"[39m
+    Received: [31m"402"[39m
+
+      160 |
+      161 |     expect(response.ok()).toBe(true);
+    > 162 |     expect(data.status_code).toBe('201');
+          |                              ^
+      163 |     expect(data.va_numbers[0].bank).toBe('bni');
+      164 |   });
+      165 |
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\midtrans-api-direct.spec.ts:162:30
+
+    Error Context: test-results\test-simulations-midtrans--89085--Charge---Bank-Transfer-BNI\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-midtrans--89085--Charge---Bank-Transfer-BNI\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-midtrans--89085--Charge---Bank-Transfer-BNI\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  9) playwright-tests\test-simulations\midtrans-api-direct.spec.ts:166:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 5. Charge - GoPay 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"201"[39m
+    Received: [31m"404"[39m
+
+      191 |
+      192 |     expect(response.ok()).toBe(true);
+    > 193 |     expect(data.status_code).toBe('201');
+          |                              ^
+      194 |     expect(data.transaction_status).toBe('pending');
+      195 |     expect(data.actions).toBeDefined();
+      196 |   });
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\midtrans-api-direct.spec.ts:193:30
+
+    Error Context: test-results\test-simulations-midtrans--b02f7--API-Tests-5-Charge---GoPay\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-midtrans--b02f7--API-Tests-5-Charge---GoPay\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-midtrans--b02f7--API-Tests-5-Charge---GoPay\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  10) playwright-tests\test-simulations\midtrans-api-direct.spec.ts:231:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 7. Get Transaction Status 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"TEST-1779543678381-6oajdrffm"[39m
+    Received: [31mundefined[39m
+
+      270 |
+      271 |     expect(statusResponse.ok()).toBe(true);
+    > 272 |     expect(statusData.order_id).toBe(orderId);
+          |                                 ^
+      273 |     expect(statusData.transaction_status).toBe('pending');
+      274 |   });
+      275 |
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\midtrans-api-direct.spec.ts:272:33
+
+    Error Context: test-results\test-simulations-midtrans--6ee4b-ts-7-Get-Transaction-Status\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-midtrans--6ee4b-ts-7-Get-Transaction-Status\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-midtrans--6ee4b-ts-7-Get-Transaction-Status\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  11) playwright-tests\test-simulations\reseller-transaction.spec.ts:5:7 ΓÇ║ Reseller Transaction Simulation ΓÇ║ login as reseller, purchase a product, and verify transaction in dashboard 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('text=ORD-1779543762031-7QO477').first()
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 15000ms[22m
+    [2m  - waiting for locator('text=ORD-1779543762031-7QO477').first()[22m
+
+
+      93 |     // Wait for transactions to be loaded
+      94 |     const transactionItem = page.locator(`text=${invoiceCode}`).first();
+    > 95 |     await expect(transactionItem).toBeVisible({ timeout: 15000 });
+         |                                   ^
+      96 |     
+      97 |     const bodyText = await page.locator('body').textContent();
+      98 |     const containsInvoice = bodyText?.includes(invoiceCode) || false;
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\reseller-transaction.spec.ts:95:35
+
+    attachment #1: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-reseller--a200b-fy-transaction-in-dashboard\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\test-simulations-reseller--a200b-fy-transaction-in-dashboard\error-context.md
+
+    attachment #3: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-reseller--a200b-fy-transaction-in-dashboard\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-reseller--a200b-fy-transaction-in-dashboard\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  11 failed
+    playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:101:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 4. Topup - Test Case SUCCESS (087800001230) 
+    playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:130:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 5. Topup - Test Case FAILED (087800001232) 
+    playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:158:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 6. Topup - Test Case PENDING (087800001233) - expect Pending then Callback 
+    playwright-tests\test-simulations\digiflazz-api-direct.spec.ts:187:7 ΓÇ║ Digiflazz Direct API Tests ΓÇ║ 7. Topup - Without testing flag (should still work with dev key) 
+    playwright-tests\test-simulations\digiflazz-sandbox.spec.ts:5:7 ΓÇ║ Digiflazz Sandbox E2E Simulation ΓÇ║ guest checkout with XL 10.000 Sandbox Test product and verify invoice redirection 
+    playwright-tests\test-simulations\midtrans-api-direct.spec.ts:71:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 2. Charge - Bank Transfer BCA 
+    playwright-tests\test-simulations\midtrans-api-direct.spec.ts:104:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 3. Charge - Bank Transfer BRI 
+    playwright-tests\test-simulations\midtrans-api-direct.spec.ts:135:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 4. Charge - Bank Transfer BNI 
+    playwright-tests\test-simulations\midtrans-api-direct.spec.ts:166:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 5. Charge - GoPay 
+    playwright-tests\test-simulations\midtrans-api-direct.spec.ts:231:7 ΓÇ║ Midtrans Direct API Tests ΓÇ║ 7. Get Transaction Status 
+    playwright-tests\test-simulations\reseller-transaction.spec.ts:5:7 ΓÇ║ Reseller Transaction Simulation ΓÇ║ login as reseller, purchase a product, and verify transaction in dashboard 
+  8 passed (2.2m)

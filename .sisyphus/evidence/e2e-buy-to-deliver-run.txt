@@ -1,0 +1,53 @@
+
+Running 1 test using 1 worker
+
+[Order Payload] items=[product_id=13277, product_sku=xld10]
+[Order Response] status=200 body={"success":true,"order":{"id":"a6bb6cb5-b44b-4b60-b774-56c52f6530cb","order_number":"ORD-1779554214973-MCHMB1","user_id":null,"status":"pending","total_amount_minor":1000000,"discount_amount_minor":0,"final_amount_minor":1000000,"voucher_code_id":null,"payment_method":null,"payment_status":"pending","metadata":{"items_count":1,"voucher_code":null},"created_at":"2026-05-23T16:36:55.097155+00:00","updated_at":"2026-05-23T16:36:55.097155+00:00"},"items":[{"id":"d956cd3a-c911-42a6-a1e6-7c125704bec9","order_id":"a6bb6cb5-b44b-4b60-b774-56c52f6530cb","product_id":"13277","product_sku":"xld10","product_name":"XL 10.000 (Sandbox Test)","quantity":1,"unit_price_minor":1000000,"total_price_minor":1000000,"customer_phone":"087800001230","customer_email":null,"status":"pending","metadata":{},"created_at":"2026-05-23T16:36:55.295086+00:00","updated_at":"2026-05-23T16:36:55.295086+00:00"}],"summary":{"total_items":1,"total_amount":1000000,"discount_amount":0,"final_amount":1000000}}
+[Created Order] invoice=ORD-1779554214973-MCHMB1 order_id=a6bb6cb5-b44b-4b60-b774-56c52f6530cb
+[Payment Webhook] status=401
+[Fulfillment Trigger] status=400 body={"error":{"code":"FULFILLMENT_VALIDATION_ERROR","message":"Order a6bb6cb5-b44b-4b60-b774-56c52f6530cb was not found."}}
+[Poll 1] status=pending_payment
+[Poll 2] status=pending_payment
+[Poll 3] status=pending_payment
+[Poll 4] status=pending_payment
+[Poll 5] status=pending_payment
+[Poll 6] status=pending_payment
+[Poll 7] status=pending_payment
+[Poll 8] status=pending_payment
+[Poll 9] status=pending_payment
+[Poll 10] status=pending_payment
+[Poll 11] status=pending_payment
+[Poll 12] status=pending_payment
+[Poll 13] status=pending_payment
+[Poll 14] status=pending_payment
+[Poll 15] status=pending_payment
+  Γ£ÿ  1 playwright-tests\test-simulations\e2e-buy-to-deliver.spec.ts:6:7 ΓÇ║ E2E Buy-to-Deliver Simulation ΓÇ║ register ΓåÆ login ΓåÆ find product ΓåÆ create order ΓåÆ pay ΓåÆ trigger fulfillment ΓåÆ verify Sukses (57.4s)
+
+
+  1) playwright-tests\test-simulations\e2e-buy-to-deliver.spec.ts:6:7 ΓÇ║ E2E Buy-to-Deliver Simulation ΓÇ║ register ΓåÆ login ΓåÆ find product ΓåÆ create order ΓåÆ pay ΓåÆ trigger fulfillment ΓåÆ verify Sukses 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      128 |
+      129 |     // Step 10: Assert final status contains success/sukses
+    > 130 |     expect(['success', 'sukses', 'fulfilled', 'completed'].some(s => finalStatus.toLowerCase().includes(s))).toBe(true);
+          |                                                                                                              ^
+      131 |   });
+      132 | });
+        at D:\coding\1.PPOB PAYMENT\backend\playwright-tests\test-simulations\e2e-buy-to-deliver.spec.ts:130:110
+
+    Error Context: test-results\test-simulations-e2e-buy-t-46c5c-fulfillment-ΓåÆ-verify-Sukses\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\test-simulations-e2e-buy-t-46c5c-fulfillment-ΓåÆ-verify-Sukses\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\test-simulations-e2e-buy-t-46c5c-fulfillment-ΓåÆ-verify-Sukses\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  1 failed
+    playwright-tests\test-simulations\e2e-buy-to-deliver.spec.ts:6:7 ΓÇ║ E2E Buy-to-Deliver Simulation ΓÇ║ register ΓåÆ login ΓåÆ find product ΓåÆ create order ΓåÆ pay ΓåÆ trigger fulfillment ΓåÆ verify Sukses 

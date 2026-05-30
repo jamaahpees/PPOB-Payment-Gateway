@@ -1,0 +1,220 @@
+═══════════════════════════════════════════════════════════════════════════
+Token Analysis: Session ses_1bb75193dffeB3e3Vz2dgeZGYV
+Model: claude-sonnet-4.5
+═══════════════════════════════════════════════════════════════════════════
+
+WARNINGS
+───────────────────────────────────────────────────
+- Pricing for '9router/ag/gemini-3-flash' was not found in models.json. Cost estimates use the default fallback rates ($1/M input, $3/M output, no cache pricing).
+
+TOKEN BREAKDOWN BY CATEGORY
+─────────────────────────────────────────────────────────────────────────
+Estimated using tokenizer analysis of message content:
+
+Input Categories:
+  USER      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      0.2% (2,075)
+  TOOLS     ██████████████████████████████   99.8% (912,386)
+
+  Subtotal: 914,461 estimated input tokens
+
+Output Categories:
+  ASSISTANT ██████████████████████████████   100.0% (156,784)
+
+  Subtotal: 156,784 estimated output tokens
+
+Local Total: 1,071,245 tokens (estimated)
+
+TOOL USAGE BREAKDOWN
+─────────────────────────────────────────────────────────────────────────
+read                 ██████████████░░░░░░░░░░░░░░░░   46.6% (425,129)  261x
+skill_mcp            █████░░░░░░░░░░░░░░░░░░░░░░░░░   17.9% (163,412)  102x
+grep                 ████░░░░░░░░░░░░░░░░░░░░░░░░░░   13.0% (118,161)  121x
+bash                 ███░░░░░░░░░░░░░░░░░░░░░░░░░░░     8.5% (77,697)  107x
+cocoindex-code_search ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░     6.6% (60,472)   40x
+vps-demo_hanzserver_online_exec █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     4.2% (38,045)  162x
+skill                █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     2.0% (18,147)    7x
+todowrite            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      0.7% (6,469)   30x
+glob                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      0.2% (1,657)   29x
+adnanpay-supabase_execute_sql ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      0.2% (1,496)    4x
+vps-demo_hanzserver_online_sudo-exec ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      0.1% (1,132)   10x
+edit                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        0.0% (274)   48x
+compress             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        0.0% (175)   16x
+adnanpay-supabase_list_tables ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░         0.0% (92)    1x
+write                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░         0.0% (12)    3x
+look_at              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░         0.0% (11)    1x
+adnanpay-supabase_apply_migration ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░          0.0% (5)    1x
+
+TOP CONTRIBUTORS
+─────────────────────────────────────────────────────────────────────────
+• read                         425,129 tokens (39.7%)
+• skill_mcp                    163,412 tokens (15.3%)
+• grep                         118,161 tokens (11.0%)
+• bash                         77,697 tokens (7.3%)
+• cocoindex-code_search        60,472 tokens (5.6%)
+
+═══════════════════════════════════════════════════════════════════════════
+MOST RECENT API CALL
+─────────────────────────────────────────────────────────────────────────
+
+Raw telemetry from last API response:
+  Input (fresh):         14,631 tokens
+  Cache read:           130,783 tokens
+  Output:                   678 tokens
+  Provider total:       146,092 tokens
+  ─────────────────────────────────────
+  Total:                146,092 tokens
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION TOTALS (All 865 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+Assistant messages observed: 870 (structural count)
+
+Total tokens processed across the entire session (for cost calculation):
+
+  Input tokens:      46,640,688 (fresh tokens across all calls)
+  Cache read:        79,999,908 (cached tokens across all calls)
+  Cache write:                0 (tokens written to cache)
+  Output tokens:        235,053 (all model responses)
+  Reasoning tokens:       4,995 (thinking/reasoning)
+  ─────────────────────────────────────
+  Session Total:     126,880,644 tokens (for billing)
+  Cache read calls:         539 / 865
+  Cache write calls:          0 / 865
+
+═══════════════════════════════════════════════════════════════════════════
+ESTIMATED SESSION COST (API Key Pricing)
+─────────────────────────────────────────────────────────────────────────
+
+You appear to be on a subscription plan (API cost is $0).
+Here's what this session would cost with direct API access:
+
+  Input tokens:      46,640,688 × $1.00/M  = $46.6407
+  Output tokens:        240,048 × $3.00/M  = $0.7201
+─────────────────────────────────────────────────────────────────────────
+ESTIMATED TOTAL: $47.3608
+
+Note: This estimate uses standard API pricing from models.json.
+Actual API costs may vary based on provider and context size.
+
+══════════════════════════════════════════════════════════════════════════
+AVAILABLE SKILLS (always-available context)
+─────────────────────────────────────────────────────────────────────────
+
+These skills were recovered from the skill tool metadata available to this session.
+
+  Skill                  Description                                   Tokens
+  ───────────────────────────────────────────────────────────────────────
+  adnanpay-natanetwork   Use when working with the Adnanpay Natanetwo…     ~68
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~68 tokens (1 skills available)
+
+  Note: Full skill tool description is ~1,629 tokens (includes boilerplate).
+
+═══════════════════════════════════════════════════════════════════════════
+AVAILABLE SUBAGENTS (in task tool definition)
+─────────────────────────────────────────────────────────────────────────
+
+These subagents are embedded in the task tool description and consume tokens on every API call.
+
+  Subagent               Description                                        Tokens
+  ───────────────────────────────────────────────────────────────────────
+  librarian              Specialized codebase understanding agent for mult…     ~77
+  explore                Contextual grep for codebases. Answers "Where is …     ~72
+  multimodal-looker      Analyze media files (PDFs, images, diagrams) that…     ~65
+  Metis - Plan Consulta… Pre-planning consultant that analyzes requests to…     ~39
+  Momus - Plan Critic    Expert reviewer for evaluating work plans against…     ~34
+  Sisyphus-Junior        Focused task executor. Same discipline, no delega…     ~34
+  oracle                 Read-only consultation agent. High-IQ reasoning s…     ~33
+  general                General-purpose agent for researching complex que…     ~30
+  build                  The default agent. Executes tools based on config…     ~15
+  plan                   Plan mode. Disallows all edit tools.                   ~12
+  explorer               Fast explorer subagent for codebase exploration        ~11
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~422 tokens (11 subagents available)
+
+  Note: Full task tool description is ~908 tokens (includes instructions/examples).
+
+═══════════════════════════════════════════════════════════════════════════
+LOADED SKILLS (on-demand content)
+─────────────────────────────────────────────────────────────────────────
+
+Skills loaded during this session via the skill tool.
+
+  Skill                  Message #     Tokens     Calls
+  ─────────────────────────────────────────────────────
+  playwright                    #27     12,861        3x
+  supabase                       #4      4,258        2x
+  adnanpay-natanetwork           #4        541        1x
+  vps-demo.hanzserver.o…         #8        475        1x
+  ─────────────────────────────────────────────────────
+  Total: 18,135 tokens (4 skills loaded)
+
+  Note: Loaded skill content stays in context (protected from pruning).
+
+═══════════════════════════════════════════════════════════════════════════
+TOOL DEFINITION COSTS (Estimated from argument analysis)
+─────────────────────────────────────────────────────────────────────────
+
+  Tool                Est. Tokens   Args   Complexity
+  ───────────────────────────────────────────────────────────────────
+  cocoindex-code_search         ~470       3   complex (arrays/objects)
+  skill_mcp                  ~440       3   complex (arrays/objects)
+  grep                       ~430       5   simple
+  compress                   ~410       2   complex (arrays/objects)
+  adnanpay-supabase_list_tables         ~410       2   complex (arrays/objects)
+  bash                       ~400       4   simple
+  todowrite                  ~380       1   complex (arrays/objects)
+  read                       ~370       3   simple
+  edit                       ~370       3   simple
+  glob                       ~340       2   simple
+  vps-demo_hanzserver_online_exec         ~340       2   simple
+  vps-demo_hanzserver_online_sudo-exec         ~340       2   simple
+  adnanpay-supabase_apply_migration         ~340       2   simple
+  write                      ~340       2   simple
+  look_at                    ~340       2   simple
+  skill                      ~310       1   simple
+  adnanpay-supabase_execute_sql         ~310       1   simple
+  tokenscope                 ~310       1   simple
+  ───────────────────────────────────────────────────────────────────
+  Total:             ~      6,650 tokens (18 enabled tools)
+
+  Note: Estimates inferred from tool call arguments in this session.
+        Actual schema tokens may vary +/-20%.
+
+═══════════════════════════════════════════════════════════════════════════
+CACHE EFFICIENCY
+─────────────────────────────────────────────────────────────────────────
+
+  Token Distribution:
+    Cache Read:        79,999,908 tokens   ███████████████████░░░░░░░░░░░  63.2%
+    Fresh Input:       46,640,688 tokens   ███████████░░░░░░░░░░░░░░░░░░░  36.8%
+  ───────────────────────────────────────────────────────────────────
+  Cache Hit Rate:      63.2% (cache read / (cache read + fresh input))
+
+  Cost Analysis (claude-sonnet-4.5 @ $1.00/M input, $0.00/M cache read, $0.00/M cache write):
+    Without caching:   $126.6406  (126,640,596 tokens x $1.00/M)
+    With caching:      $46.6407  (fresh x $1.00/M + cache read x $0.00/M + cache write x $0.00/M)
+  ───────────────────────────────────────────────────────────────────
+  Cost Savings:        $79.9999  (63.2% reduction)
+  Effective Rate:      $0.37/M tokens  (vs. $1.00/M standard)
+
+═══════════════════════════════════════════════════════════════════════════
+SUBAGENT COSTS (1 child sessions, 0 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+  look_at:                     $0.0000  (0 tokens, 0 calls)
+─────────────────────────────────────────────────────────────────────────
+Subagent Total:            $0.0000  (0 tokens, 0 calls)
+
+═══════════════════════════════════════════════════════════════════════════
+SUMMARY
+─────────────────────────────────────────────────────────────────────────
+
+                          Cost        Tokens          API Calls
+  Main session:      $   47.3608    126,880,644           865
+  Subagents:         $    0.0000             0             0
+─────────────────────────────────────────────────────────────────────────
+  TOTAL:             $   47.3608    126,880,644           865
+
+═══════════════════════════════════════════════════════════════════════════

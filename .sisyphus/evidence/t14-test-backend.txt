@@ -1,0 +1,973 @@
+
+> ppob-backend@1.0.0 test
+> jest --runInBand
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/regression/lifecycle.regression.test.ts (12.727 s)
+  ΓùÅ full lifecycle regression suite ΓÇ║ runs local guest order through payment, fulfillment callback, and invoice status
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createLifecycleFixture (src/modules/regression/lifecycle.regression.test.ts:150:24)
+      at Object.<anonymous> (src/modules/regression/lifecycle.regression.test.ts:192:21)
+
+  ΓùÅ full lifecycle regression suite ΓÇ║ keeps payment, fulfillment, and invoice flows compatible for seller-priced catalog orders
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createLifecycleFixture (src/modules/regression/lifecycle.regression.test.ts:150:24)
+      at Object.<anonymous> (src/modules/regression/lifecycle.regression.test.ts:271:21)
+
+  ΓùÅ full lifecycle regression suite ΓÇ║ keeps Midtrans replay idempotent and rejects invalid signatures without mutation
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createLifecycleFixture (src/modules/regression/lifecycle.regression.test.ts:150:24)
+      at Object.<anonymous> (src/modules/regression/lifecycle.regression.test.ts:348:21)
+
+  ΓùÅ full lifecycle regression suite ΓÇ║ uses reconciliation for out-of-order success and denies illegal terminal regression
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createLifecycleFixture (src/modules/regression/lifecycle.regression.test.ts:150:24)
+      at Object.<anonymous> (src/modules/regression/lifecycle.regression.test.ts:389:21)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/catalog/catalog.router.test.ts
+  ΓùÅ catalog and pricing routes ΓÇ║ returns role-aware server-computed prices with pricing precedence
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:166:26)
+
+  ΓùÅ catalog and pricing routes ΓÇ║ exposes inactive and missing product paths for ordering
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:216:26)
+
+  ΓùÅ catalog and pricing routes ΓÇ║ syncs Digiflazz prepaid price list through admin catalog only
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:262:26)
+
+  ΓùÅ catalog and pricing routes ΓÇ║ requires admin auth for Digiflazz price-list sync
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:341:26)
+
+  ΓùÅ catalog and pricing routes ΓÇ║ rate-limits repeated Digiflazz price-list sync attempts
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:368:26)
+
+  ΓùÅ catalog and pricing routes ΓÇ║ protects admin management and rejects client-submitted prices
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/catalog/catalog.router.test.ts:408:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/fulfillment/fulfillment.router.test.ts
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ triggers fulfillment only after order is paid
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:114:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ processes unsigned Digiflazz callback when no webhook secret is configured and preserves duplicate idempotency
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:133:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ validates Digiflazz webhook HMAC over the raw request body when a secret is configured
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:172:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ rejects invalid or missing Digiflazz webhook signatures when a secret is configured
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:197:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ acknowledges Digiflazz ping events without storing transaction webhook events
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:210:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ ignores Digiflazz postpaid webhook deliveries without storing prepaid transaction events
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:222:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ rechecks a pending prepaid transaction by repeating topup with the same ref_id
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:266:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ uses controlled mock fallback outside production when credentials are missing
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:311:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ does not silently use mock fallback in production
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:327:26)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ rejects fulfillment trigger for unpaid order
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:359:17)
+
+  ΓùÅ digiflazz fulfillment routes ΓÇ║ ignores success callback for unpaid order via monotonic guard
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFulfillmentApp (src/modules/fulfillment/fulfillment.router.test.ts:66:19)
+      at Object.<anonymous> (src/modules/fulfillment/fulfillment.router.test.ts:403:17)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/payment/payment.router.test.ts
+  ΓùÅ midtrans payment routes ΓÇ║ initializes midtrans payment for pending_payment order
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:56:26)
+
+  ΓùÅ midtrans payment routes ΓÇ║ processes webhook once and ignores replay by event key
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:96:26)
+
+  ΓùÅ midtrans payment routes ΓÇ║ rejects webhook with invalid signature before any mutation
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:181:26)
+
+  ΓùÅ midtrans payment routes ΓÇ║ rejects a validly signed Midtrans webhook when gross_amount does not match the stored order
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:255:26)
+
+  ΓùÅ midtrans payment routes ΓÇ║ rejects a conflicting failed webhook after a payment has already been verified as paid
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:316:26)
+
+  ΓùÅ midtrans payment routes ΓÇ║ rate limits sensitive payment endpoints and records a sanitized audit event
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/payment/payment.router.test.ts:397:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/auth/auth.router.test.ts
+  ΓùÅ auth routes ΓÇ║ registers pengguna users, logs in, and returns current user on both mounts
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/auth/auth.router.test.ts:21:26)
+
+  ΓùÅ auth routes ΓÇ║ requests, resends, and verifies email without exposing token hashes or raw tokens
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/auth/auth.router.test.ts:111:26)
+
+  ΓùÅ auth routes ΓÇ║ enforces verification resend cooldown and rate limit
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/auth/auth.router.test.ts:174:26)
+
+  ΓùÅ auth routes ΓÇ║ uses generic login failures and rejects missing or invalid bearer tokens
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/auth/auth.router.test.ts:230:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/dashboard/dashboard.router.test.ts
+  ΓùÅ dashboard history and monitoring routes ΓÇ║ returns authenticated member transaction history and empty history for other members
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createDashboardFixture (src/modules/dashboard/dashboard.router.test.ts:33:24)
+      at Object.<anonymous> (src/modules/dashboard/dashboard.router.test.ts:126:21)
+
+  ΓùÅ dashboard history and monitoring routes ΓÇ║ keeps admin monitoring read-only and protected by admin role
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createDashboardFixture (src/modules/dashboard/dashboard.router.test.ts:33:24)
+      at Object.<anonymous> (src/modules/dashboard/dashboard.router.test.ts:154:21)
+
+  ΓùÅ dashboard history and monitoring routes ΓÇ║ returns admin-only Digiflazz Buyer operations without exposing secrets
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createDashboardFixture (src/modules/dashboard/dashboard.router.test.ts:33:24)
+      at Object.<anonymous> (src/modules/dashboard/dashboard.router.test.ts:194:21)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/postpaid/postpaid.router.test.ts
+  ΓùÅ Digiflazz postpaid routes ΓÇ║ runs inquiry, pay, status-pasca, and PLN inquiry through the Buyer client
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createPostpaidApp (src/modules/postpaid/postpaid.router.test.ts:33:19)
+      at Object.<anonymous> (src/modules/postpaid/postpaid.router.test.ts:117:21)
+
+  ΓùÅ Digiflazz postpaid routes ΓÇ║ rejects client amount tampering and pays with the stored inquiry amount and identifiers
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createPostpaidApp (src/modules/postpaid/postpaid.router.test.ts:33:19)
+      at Object.<anonymous> (src/modules/postpaid/postpaid.router.test.ts:248:21)
+
+  ΓùÅ Digiflazz postpaid routes ΓÇ║ validates category metadata and forwards documented postpaid inquiry fields
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createPostpaidApp (src/modules/postpaid/postpaid.router.test.ts:33:19)
+      at Object.<anonymous> (src/modules/postpaid/postpaid.router.test.ts:312:21)
+
+  ΓùÅ Digiflazz postpaid routes ΓÇ║ enforces owner-only access to stored postpaid inquiries
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createPostpaidApp (src/modules/postpaid/postpaid.router.test.ts:33:19)
+      at Object.<anonymous> (src/modules/postpaid/postpaid.router.test.ts:372:21)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/account/account.router.test.ts
+  ΓùÅ account RBAC routes ΓÇ║ requires JWTs, enforces ownership, prevents escalation, and gates reseller requests by verified email
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/account/account.router.test.ts:37:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/admin/admin.router.test.ts
+  ΓùÅ admin RBAC routes ΓÇ║ returns 401 without token, 403 for wrong role, and lets admins manage reseller status
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/admin/admin.router.test.ts:22:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/order/order.router.test.ts
+  ΓùÅ POST /api/orders ΓÇ║ returns order_id, invoice_code, and pending_payment for valid legacy guest payload
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createOrderApp (src/modules/order/order.router.test.ts:87:19)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:97:21)
+
+  ΓùÅ POST /api/orders ΓÇ║ applies pengguna pricing snapshots for guest product-priced orders and ignores tampered amount
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createOrderApp (src/modules/order/order.router.test.ts:87:19)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:169:21)
+
+  ΓùÅ POST /api/orders ΓÇ║ stores authenticated seller snapshots and ignores client price tampering
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createOrderApp (src/modules/order/order.router.test.ts:87:19)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:214:21)
+
+  ΓùÅ POST /api/orders ΓÇ║ returns unauthorized when a provided bearer token is invalid
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createOrderApp (src/modules/order/order.router.test.ts:87:19)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:251:21)
+
+  ΓùÅ POST /api/orders ΓÇ║ rejects inactive catalog products on the product-priced path
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createOrderApp (src/modules/order/order.router.test.ts:87:19)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:280:21)
+
+  ΓùÅ POST /api/orders ΓÇ║ returns stable validation error for invalid payload
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/order/order.router.test.ts:304:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/commission/commission.router.test.ts
+  ΓùÅ Test suite failed to run
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at src/modules/commission/commission.router.test.ts:14:24
+      at Object.<anonymous> (src/modules/commission/commission.router.test.ts:10:9)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/regression/fraud-matrix.regression.test.ts
+  ΓùÅ Fraud Matrix Regression ΓÇ║ Scenario: Mismatch Amount Webhook - rejected and order remains pending
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFraudFixture (src/modules/regression/fraud-matrix.regression.test.ts:63:24)
+      at Object.<anonymous> (src/modules/regression/fraud-matrix.regression.test.ts:100:57)
+
+  ΓùÅ Fraud Matrix Regression ΓÇ║ Scenario: Fulfillment Before Payment - trigger blocked
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFraudFixture (src/modules/regression/fraud-matrix.regression.test.ts:63:24)
+      at Object.<anonymous> (src/modules/regression/fraud-matrix.regression.test.ts:141:57)
+
+  ΓùÅ Fraud Matrix Regression ΓÇ║ Scenario: Success Callback on Unpaid Order - ignored by guard
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createFraudFixture (src/modules/regression/fraud-matrix.regression.test.ts:63:24)
+      at Object.<anonymous> (src/modules/regression/fraud-matrix.regression.test.ts:173:57)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/regression/rbac-public-routes.regression.test.ts
+  ΓùÅ RBAC public route regressions ΓÇ║ keeps guest order, invoice, payment webhook, and fulfillment callback routes public
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createPublicRouteFixture (src/modules/regression/rbac-public-routes.regression.test.ts:71:19)
+      at Object.<anonymous> (src/modules/regression/rbac-public-routes.regression.test.ts:85:21)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/modules/invoice-status/invoice-status.router.test.ts
+  ΓùÅ GET /api/invoices/:invoiceCode/status ΓÇ║ returns a single guest-safe invoice status with timeline and summaries
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at createStatusFixture (src/modules/invoice-status/invoice-status.router.test.ts:27:24)
+      at Object.<anonymous> (src/modules/invoice-status/invoice-status.router.test.ts:44:21)
+
+  ΓùÅ GET /api/invoices/:invoiceCode/status ΓÇ║ returns a safe not-found response for an invalid invoice
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/invoice-status/invoice-status.router.test.ts:137:45)
+
+  ΓùÅ GET /api/invoices/:invoiceCode/status ΓÇ║ does not expose unrestricted invoice or order listing
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/modules/invoice-status/invoice-status.router.test.ts:149:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+FAIL src/routes/health.test.ts
+  ΓùÅ GET /health ΓÇ║ returns 200 and status ok
+
+    Encryption key must be 32 bytes (256 bits)
+
+      11 |   
+      12 |   if (keyBuffer.length !== ENCRYPTION_KEY_LENGTH) {
+    > 13 |     throw new Error(`Encryption key must be ${ENCRYPTION_KEY_LENGTH} bytes (256 bits)`);
+         |           ^
+      14 |   }
+      15 |
+      16 |   return {
+
+      at createEncryptionService (src/security/encryption.service.ts:13:11)
+      at createApp (src/app.ts:344:52)
+      at Object.<anonymous> (src/routes/health.test.ts:8:26)
+
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+ts-jest[config] (WARN) message TS151002: Using hybrid module kind (Node16/18/Next) is only supported in "isolatedModules: true". Please set "isolatedModules: true" in your tsconfig.json. To disable this message, you can set "diagnostics.ignoreCodes" to include 151002 in your ts-jest config. See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/options/diagnostics
+
+Test Suites: 15 failed, 3 passed, 18 total
+Tests:       54 failed, 10 passed, 64 total
+Snapshots:   0 total
+Time:        29.349 s
+Ran all test suites.

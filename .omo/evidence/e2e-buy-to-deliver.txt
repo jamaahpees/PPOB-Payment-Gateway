@@ -1,0 +1,9 @@
+simulation=e2e-buy-to-deliver timestamp=2026-05-23T16:37:44.232Z
+created_user reseller+20260523163647@example.test
+login_ok
+found_product xld10 price=1000000
+order_created ORD-1779554214973-MCHMB1 order_id=a6bb6cb5-b44b-4b60-b774-56c52f6530cb
+invoice_status_initial pending_payment
+payment_webhook_status 401
+fulfillment_triggered status=undefined
+final_status pending_payment

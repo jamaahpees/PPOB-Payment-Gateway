@@ -1,0 +1,20 @@
+simulation=digiflazz-sandbox timestamp=2026-05-20T16:15:53.230Z
+catalog_loaded
+found_sandbox_product
+invoice_redirected_successfully ORD-1779293751269-EON8JE
+invoice_details_rendered
+simulation=digiflazz-sandbox timestamp=2026-05-20T16:18:25.970Z
+catalog_loaded
+found_sandbox_product
+invoice_redirected_successfully ORD-1779293904203-5KFB24
+invoice_details_rendered
+simulation=digiflazz-sandbox timestamp=2026-05-23T10:36:05.329Z
+catalog_loaded
+found_sandbox_product
+invoice_redirected_successfully ORD-1779532563834-QELD1K
+invoice_details_rendered
+simulation=digiflazz-sandbox timestamp=2026-05-23T13:42:03.271Z
+catalog_loaded
+found_sandbox_product
+invoice_redirected_successfully ORD-1779543716082-DU78KP
+invoice_details_rendered

@@ -1,0 +1,56 @@
+simulation=reseller-payout timestamp=2026-05-23T09:25:38.613Z
+created_reseller_user reseller+20260523092518@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T09:26:37.357Z
+created_reseller_user reseller+20260523092625@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T09:28:01.683Z
+created_reseller_user reseller+20260523092749@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T10:26:23.226Z
+created_reseller_user reseller+20260523102607@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout timestamp=2026-05-23T10:36:13.861Z
+created_reseller_user reseller+20260523103557@example.test
+logged_in_successfully
+dashboard_has_saldo_text false
+dashboard_has_currency_text false
+transaksi_page_loaded true
+simulation=reseller-payout-10step timestamp=2026-05-23T13:41:05.991Z
+step1_reseller_created reseller+20260523134049@example.test
+step2_logged_in
+step3_saldo_komisi_visible false
+step4_screenshot_taken
+step5_payout_button_not_found
+step6_form_filled 
+step7_submitted
+step8_success_message_visible false
+step9_api_call_failed 404
+payout_request_verified false
+payout_request_id N/A
+status pending
+simulation=reseller-payout-10step timestamp=2026-05-23T13:43:48.913Z
+step1_reseller_created reseller+20260523134335@example.test
+step2_logged_in
+step3_saldo_komisi_visible false
+step4_screenshot_taken
+step5_payout_button_not_found
+step6_form_filled 
+step7_submitted
+step8_success_message_visible false
+step9_api_call_failed 404
+payout_request_verified false
+payout_request_id N/A
+status pending
