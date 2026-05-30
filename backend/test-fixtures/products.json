@@ -28,5 +28,17 @@
     "name": "Telkomsel 5.000",
     "category": "Pulsa & Data",
     "provider": "digiflazz"
+  },
+  {
+    "sku_digiflazz": "xld10",
+    "name": "XL 10.000",
+    "category": "Pulsa & Data",
+    "provider": "digiflazz"
+  },
+  {
+    "sku_digiflazz": "4NwT49",
+    "name": "4NwT49 Sandbox Product",
+    "category": "Pulsa & Data",
+    "provider": "digiflazz"
   }
 ]

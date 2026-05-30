@@ -22,7 +22,7 @@ test.describe('Wave 2 Guest features', () => {
       }
     }
 
-    const order = await createTestOrder(request);
+    const order = await createTestOrder(request, { product_code: 'xld10' });
     findings.push(`order_created ${order.invoice_code} ${order.status}`);
 
     const payment = await apiJson<{ payment_id: string; status: string; redirect_url: string }>(request, '/api/payments/midtrans/initialize', {
