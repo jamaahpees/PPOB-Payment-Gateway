@@ -135,7 +135,7 @@ export function createApp(dependencies: AppDependencies) {
   if (process.env.NODE_ENV !== "test") {
     const globalLimiter = rateLimit({
       windowMs: 60 * 1000,
-      max: 30,
+      max: 120,
       validate: { trustProxy: false },
       message: { success: false, message: "Terlalu banyak request. Silakan coba lagi dalam 1 menit." }
     });
