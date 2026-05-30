@@ -1,5 +1,5 @@
 import { FormEvent, useCallback, useEffect, useMemo, useState } from 'react';
-import { AlertCircle, BadgeCheck, Boxes, CheckCircle2, Loader2, LogOut, ReceiptText, RefreshCw, ShieldCheck, Sparkles, UserRound } from 'lucide-react';
+import { AlertCircle, BadgeCheck, Banknote, Boxes, CheckCircle2, Clock, CreditCard, Loader2, LogOut, ReceiptText, RefreshCw, ShieldCheck, Sparkles, UserRound, Wallet } from 'lucide-react';
 
 import { bearerHeaders, readJsonApi } from '../lib/api';
 import { setAuthToken, clearAuthToken } from '../lib/auth';
@@ -81,6 +81,29 @@ type TransactionsResponse = Readonly<{
   transactions: TransactionHistoryItem[];
 }>;
 
+type PayoutBalance = Readonly<{
+  payable_balance_minor: number;
+}>;
+
+type PayoutRequest = Readonly<{
+  id: string;
+  amount_minor: number;
+  bank_name: string;
+  account_number: string;
+  account_holder: string;
+  legal_name: string;
+  nik: string;
+  address: string;
+  phone: string | null;
+  status: 'pending' | 'approved' | 'rejected' | 'paid';
+  created_at: string;
+  updated_at: string;
+}>;
+
+type PayoutRequestsResponse = Readonly<{
+  requests: PayoutRequest[];
+}>;
+
 type AuthMode = 'login' | 'register';
 
 const storageKey = 'bayarku.auth.session';
@@ -159,6 +182,25 @@ export default function AuthDashboard() {
   const [isRequestingReseller, setIsRequestingReseller] = useState(false);
   const [resellerMessage, setResellerMessage] = useState<string | null>(null);
 
+  const [payoutBalance, setPayoutBalance] = useState<number>(0);
+  const [isLoadingPayoutBalance, setIsLoadingPayoutBalance] = useState(false);
+  const [payoutRequests, setPayoutRequests] = useState<PayoutRequest[]>([]);
+  const [isLoadingPayoutRequests, setIsLoadingPayoutRequests] = useState(false);
+  const [isShowPayoutForm, setIsShowPayoutForm] = useState(false);
+  const [isSubmittingPayout, setIsSubmittingPayout] = useState(false);
+  const [payoutMessage, setPayoutMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const [payoutForm, setPayoutForm] = useState({
+    amount: '',
+    bank_name: '',
+    account_number: '',
+    account_holder: '',
+    legal_name: '',
+    nik: '',
+    address: '',
+    phone: '',
+  });
+
   const token = session?.token ?? null;
   const visibleProducts = useMemo(() => catalogProducts.slice(0, 4), [catalogProducts]);
 
@@ -198,6 +240,27 @@ export default function AuthDashboard() {
     }
   }, []);
 
+  const loadPayoutData = useCallback(async (activeToken: string) => {
+    setIsLoadingPayoutBalance(true);
+    setIsLoadingPayoutRequests(true);
+
+    try {
+      const [balancePayload, requestsPayload] = await Promise.all([
+        readJsonApi<PayoutBalance>('/payout/balance', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<PayoutRequestsResponse>('/payout/requests', { headers: bearerHeaders(activeToken) }),
+      ]);
+
+      setPayoutBalance(balancePayload.payable_balance_minor);
+      setPayoutRequests(requestsPayload.requests);
+    } catch {
+      setPayoutBalance(0);
+      setPayoutRequests([]);
+    } finally {
+      setIsLoadingPayoutBalance(false);
+      setIsLoadingPayoutRequests(false);
+    }
+  }, []);
+
   useEffect(() => {
     if (token === null) {
       setIsLoadingDashboard(false);
@@ -208,6 +271,14 @@ export default function AuthDashboard() {
 
     void loadDashboardData(token);
   }, [loadDashboardData, token]);
+
+  useEffect(() => {
+    if (token === null || accountUser?.role !== 'seller') {
+      return;
+    }
+
+    void loadPayoutData(token);
+  }, [loadPayoutData, token, accountUser?.role]);
 
   const submitAuth = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -280,6 +351,76 @@ export default function AuthDashboard() {
     } finally {
       setIsRequestingReseller(false);
     }
+  };
+
+  const submitPayoutRequest = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (token === null) {
+      return;
+    }
+
+    setIsSubmittingPayout(true);
+    setPayoutMessage(null);
+
+    try {
+      const amountIdr = parseFloat(payoutForm.amount);
+      if (isNaN(amountIdr) || amountIdr <= 0) {
+        throw new Error('Jumlah penarikan tidak valid.');
+      }
+
+      const amountMinor = Math.round(amountIdr * 100);
+
+      await readJsonApi<{ message?: string }>('/payout/request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...bearerHeaders(token),
+        },
+        body: JSON.stringify({
+          amount_minor: amountMinor,
+          bank_name: payoutForm.bank_name,
+          account_number: payoutForm.account_number,
+          account_holder: payoutForm.account_holder,
+          legal_name: payoutForm.legal_name,
+          nik: payoutForm.nik,
+          address: payoutForm.address,
+          phone: payoutForm.phone || undefined,
+        }),
+      });
+
+      setPayoutMessage({ type: 'success', text: 'Pengajuan penarikan berhasil dikirim. Status: Menunggu' });
+      setPayoutForm({
+        amount: '',
+        bank_name: '',
+        account_number: '',
+        account_holder: '',
+        legal_name: '',
+        nik: '',
+        address: '',
+        phone: '',
+      });
+      setIsShowPayoutForm(false);
+      void loadPayoutData(token);
+    } catch (error) {
+      setPayoutMessage({ type: 'error', text: error instanceof Error ? error.message : 'Pengajuan penarikan gagal.' });
+    } finally {
+      setIsSubmittingPayout(false);
+    }
+  };
+
+  const formatPayoutRupiah = (amountMinor: number) => {
+    const amount = amountMinor / 100;
+    return 'Rp ' + amount.toLocaleString('id-ID');
+  };
+
+  const payoutStatusLabel = (status: PayoutRequest['status']) => {
+    const labels: Record<PayoutRequest['status'], string> = {
+      pending: 'Menunggu',
+      approved: 'Disetujui',
+      rejected: 'Ditolak',
+      paid: 'Dibayar',
+    };
+    return labels[status];
   };
 
   if (session === null || token === null) {
@@ -534,6 +675,239 @@ export default function AuthDashboard() {
                 </div>
               </section>
             </div>
+
+            {accountUser?.role === 'seller' && (
+              <div className="space-y-6">
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <h2 className="text-xl font-extrabold text-slate-900">Payout Komisi</h2>
+                      <p className="mt-1 text-sm text-slate-500">Kelola penarikan saldo komisi reseller Anda.</p>
+                    </div>
+                    <Wallet className="text-amber-500" size={24} />
+                  </div>
+
+                  <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50/50 p-5">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm font-semibold text-amber-800">Saldo Komisi Tersedia</p>
+                        {isLoadingPayoutBalance ? (
+                          <p className="mt-1 text-2xl font-extrabold text-slate-900">
+                            <Loader2 size={24} className="animate-spin text-amber-500" />
+                          </p>
+                        ) : (
+                          <p className="mt-1 text-2xl font-extrabold text-slate-900">
+                            {formatPayoutRupiah(payoutBalance)}
+                          </p>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setIsShowPayoutForm(!isShowPayoutForm)}
+                        className="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-400 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-200 transition-all hover:bg-amber-300"
+                      >
+                        <Banknote size={17} />
+                        Ajukan Penarikan
+                      </button>
+                    </div>
+                  </div>
+
+                  {payoutMessage && (
+                    <div className={`mt-4 flex items-start gap-2 rounded-2xl p-4 text-sm ${
+                      payoutMessage.type === 'success'
+                        ? 'border border-emerald-100 bg-emerald-50 text-emerald-700'
+                        : 'border border-rose-100 bg-rose-50 text-rose-700'
+                    }`}>
+                      <AlertCircle size={18} className="mt-0.5 flex-shrink-0" />
+                      <span>{payoutMessage.text}</span>
+                    </div>
+                  )}
+
+                  {isShowPayoutForm && (
+                    <form onSubmit={submitPayoutRequest} className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5 space-y-4">
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="payout-amount" className="text-sm font-semibold text-slate-700">
+                            Jumlah (IDR)
+                          </label>
+                          <input
+                            id="payout-amount"
+                            type="number"
+                            min="10000"
+                            step="1"
+                            value={payoutForm.amount}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, amount: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="最低 Rp 10.000"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-bank" className="text-sm font-semibold text-slate-700">
+                            Nama Bank
+                          </label>
+                          <input
+                            id="payout-bank"
+                            type="text"
+                            value={payoutForm.bank_name}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, bank_name: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Contoh: BCA, BRI, Mandiri"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-account-number" className="text-sm font-semibold text-slate-700">
+                            Nomor Rekening
+                          </label>
+                          <input
+                            id="payout-account-number"
+                            type="text"
+                            value={payoutForm.account_number}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, account_number: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Nomor rekening bank"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-account-holder" className="text-sm font-semibold text-slate-700">
+                            Nama Pemilik Rekening
+                          </label>
+                          <input
+                            id="payout-account-holder"
+                            type="text"
+                            value={payoutForm.account_holder}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, account_holder: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Nama sesuai rekening bank"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-legal-name" className="text-sm font-semibold text-slate-700">
+                            Nama Lengkap
+                          </label>
+                          <input
+                            id="payout-legal-name"
+                            type="text"
+                            value={payoutForm.legal_name}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, legal_name: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Nama lengkap sesuai KTP"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-nik" className="text-sm font-semibold text-slate-700">
+                            NIK
+                          </label>
+                          <input
+                            id="payout-nik"
+                            type="text"
+                            value={payoutForm.nik}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, nik: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Nomor KTP"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="payout-phone" className="text-sm font-semibold text-slate-700">
+                            Telepon (Opsional)
+                          </label>
+                          <input
+                            id="payout-phone"
+                            type="tel"
+                            value={payoutForm.phone}
+                            onChange={(e) => setPayoutForm((f) => ({ ...f, phone: e.target.value }))}
+                            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                            placeholder="Nomor WhatsApp"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label htmlFor="payout-address" className="text-sm font-semibold text-slate-700">
+                          Alamat
+                        </label>
+                        <textarea
+                          id="payout-address"
+                          value={payoutForm.address}
+                          onChange={(e) => setPayoutForm((f) => ({ ...f, address: e.target.value }))}
+                          className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
+                          placeholder="Alamat lengkap sesuai KTP"
+                          rows={3}
+                          required
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        disabled={isSubmittingPayout}
+                        className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-extrabold text-white shadow-lg transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+                      >
+                        {isSubmittingPayout ? <Loader2 size={18} className="animate-spin" /> : <CreditCard size={18} />}
+                        Kirim Pengajuan Penarikan
+                      </button>
+                    </form>
+                  )}
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <h2 className="text-xl font-extrabold text-slate-900">Riwayat Penarikan</h2>
+                      <p className="mt-1 text-sm text-slate-500">Lihat status pengajuan penarikan komisi sebelumnya.</p>
+                    </div>
+                    <Clock className="text-amber-500" size={24} />
+                  </div>
+
+                  <div className="mt-5 overflow-x-auto">
+                    {isLoadingPayoutRequests ? (
+                      <div className="flex items-center justify-center py-8">
+                        <Loader2 size={24} className="animate-spin text-amber-500" />
+                      </div>
+                    ) : payoutRequests.length === 0 ? (
+                      <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm text-slate-500">
+                        Belum ada pengajuan penarikan.
+                      </div>
+                    ) : (
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-slate-100 text-left">
+                            <th className="pb-3 font-bold text-slate-600">Tanggal</th>
+                            <th className="pb-3 font-bold text-slate-600">Jumlah</th>
+                            <th className="pb-3 font-bold text-slate-600">Bank</th>
+                            <th className="pb-3 font-bold text-slate-600">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {payoutRequests.map((req) => (
+                            <tr key={req.id} className="border-b border-slate-50 last:border-0">
+                              <td className="py-3 text-slate-700">{formatDateTime(req.created_at)}</td>
+                              <td className="py-3 font-extrabold text-slate-900">{formatPayoutRupiah(req.amount_minor)}</td>
+                              <td className="py-3 text-slate-700">
+                                {req.bank_name} - {req.account_number}
+                              </td>
+                              <td className="py-3">
+                                <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide ${
+                                  req.status === 'pending'
+                                    ? 'bg-amber-100 text-amber-800 border border-amber-200'
+                                    : req.status === 'approved' || req.status === 'paid'
+                                    ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                                    : 'bg-rose-100 text-rose-800 border border-rose-200'
+                                }`}>
+                                  {payoutStatusLabel(req.status)}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </section>

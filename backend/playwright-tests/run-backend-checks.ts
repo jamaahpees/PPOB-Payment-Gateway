@@ -11,7 +11,7 @@ async function main() {
     const health = await apiJson<{ status: string }>(context, '/health');
     lines.push(`health ${health.response.status()} ${(health.data as { status?: string })?.status ?? 'unknown'}`);
 
-    const order = await createTestOrder(context, { product_code: 'gopay20' });
+    const order = await createTestOrder(context, { product_code: 'xld10' });
     lines.push(`order ${order.order_id} ${order.invoice_code} ${order.status}`);
 
     const payment = await apiJson<Record<string, unknown>>(context, '/api/payments/midtrans/initialize', {

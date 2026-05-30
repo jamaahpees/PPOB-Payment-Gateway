@@ -6,7 +6,7 @@ export default defineConfig({
   fullyParallel: false,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-report' }]],
   use: {
-    baseURL: 'https://adnanpay.com/demo/',
+    baseURL: 'https://demo.hanzserver.online/',
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

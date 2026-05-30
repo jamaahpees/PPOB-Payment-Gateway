@@ -16,7 +16,7 @@ test.describe('Wave 2 Guest features', () => {
     const productCodes = (catalog.data?.products ?? []).map((item) => item.product.sku_digiflazz);
     findings.push(`catalog_products ${productCodes.join(',')}`);
 
-    for (const required of ['gopay10', 'gopay20', 'gopay25', 'gopay50', 'telkomsel5']) {
+    for (const required of ['xld10', '4NwT49']) {
       if (!productCodes.includes(required)) {
         await writeBugReport('guest-missing-dev-products.md', `# Missing dev product\n\nExpected product \`${required}\` was not returned by \`GET /api/catalog\` in demo mode.`);
       }

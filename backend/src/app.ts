@@ -55,6 +55,10 @@ import { ProductCacheService } from "./modules/catalog/product-cache.service";
 import { InMemoryPostpaidRepository, SupabasePostpaidRepository, type PostpaidRepository } from "./modules/postpaid/postpaid.repository";
 import { createPostpaidRouter } from "./modules/postpaid/postpaid.router";
 import { createPostpaidService, type PostpaidService } from "./modules/postpaid/postpaid.service";
+import { InMemoryPayoutRepository, SupabasePayoutRepository, type PayoutRepository } from "./modules/payout/payout.repository";
+import { createPayoutService, type PayoutService } from "./modules/payout/payout.service";
+import { createPayoutRouter } from "./modules/payout/payout.router";
+import { createEncryptionService } from "./security/encryption.service";
 import { type AuditLogger } from "./security/audit";
 import { createRateLimitMiddleware } from "./security/rate-limit";
 
@@ -99,12 +103,15 @@ export type AppDependencies = Readonly<{
   providerAuditRepository?: ProviderAuditRepository;
   commissionRepository?: CommissionRepository;
   commissionService?: CommissionService;
+  payoutRepository?: PayoutRepository;
+  payoutService?: PayoutService;
   auditLogger?: AuditLogger;
   rateLimit?: Readonly<{ windowMs: number; maxRequests: number }>;
   supabaseConfig?: Readonly<{ url: string; serviceRoleKey: string; tablePrefix?: string }>;
   authConfig?: Readonly<{ jwtSecret: string; jwtExpiresIn: string; passwordHashCost: number }>;
   midtransConfig?: MidtransConfig;
   digiflazzConfig?: DigiflazzConfig;
+  encryptionConfig?: Readonly<{ encryptionKey: string }>;
   fetchImpl?: typeof fetch;
 }>;
 
@@ -324,7 +331,25 @@ export function createApp(dependencies: AppDependencies) {
     fetchImpl: dependencies.fetchImpl
   });
 
-  // 10. Dashboard
+  // 10. Payout
+  const payoutRepository = dependencies.payoutRepository ?? (
+    dependencies.supabaseConfig
+      ? new SupabasePayoutRepository(
+          dependencies.supabaseConfig.url,
+          dependencies.supabaseConfig.serviceRoleKey,
+          tablePrefix
+        )
+      : new InMemoryPayoutRepository()
+  );
+  const encryptionService = createEncryptionService({
+    encryptionKey: dependencies.encryptionConfig?.encryptionKey ?? "AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA=="
+  });
+  const payoutService = dependencies.payoutService ?? createPayoutService({
+    repository: payoutRepository,
+    encryption: encryptionService
+  });
+
+  // 11. Dashboard
   const dashboardService = dependencies.dashboardService ?? createDashboardService({
     orderRepository,
     paymentRepository,
@@ -406,6 +431,7 @@ export function createApp(dependencies: AppDependencies) {
       auditLogger: dependencies.auditLogger
     }));
     app.use(fullPath("/api/digiflazz"), authenticationMiddleware, createPostpaidRouter({ postpaidService }));
+    app.use(fullPath("/api/payout"), authenticationMiddleware, createPayoutRouter({ payoutService }));
     app.use(fullPath("/api/invoices"), createInvoiceStatusRouter({ invoiceStatusService }));
     app.use(fullPath("/api/vouchers"), voucherRouter);
 

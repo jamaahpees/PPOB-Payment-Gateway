@@ -5,7 +5,7 @@ import { expect, type APIRequestContext, type Page } from '@playwright/test';
 
 import { buildGeneratedCredential, readOrdersFixture, readProductsFixture } from './fixtures';
 
-export const demoApiBaseUrl = 'https://adnanpay.com/ppob-api';
+export const demoApiBaseUrl = 'https://demo.hanzserver.online';
 const repoRootDir = path.resolve(process.cwd(), '..');
 const evidenceDir = path.resolve(repoRootDir, '.sisyphus', 'evidence');
 const bugsDir = path.join(evidenceDir, 'bugs');
@@ -127,16 +127,24 @@ export async function cleanupTestData() {
 
 export async function loginAsReseller(page: Page, email: string, password: string) {
   await page.goto('/dashboard');
-  await page.getByLabel('Email').fill(email);
-  await page.getByLabel('Password').fill(password);
-  await page.getByRole('button', { name: /masuk ke dashboard/i }).click();
+  const emailInput = page.getByPlaceholder('nama@email.com').or(page.getByLabel('Email')).first();
+  await emailInput.fill(email);
+  const passwordInput = page.getByPlaceholder('••••••••').or(page.getByLabel('Password')).first();
+  await passwordInput.fill(password);
+  const loginButton = page.getByRole('button', { name: /masuk sekarang/i }).or(page.getByRole('button', { name: /masuk ke dashboard/i })).first();
+  await loginButton.click();
+  // Wait for the dashboard to successfully load before completing the login helper
+  await expect(page.locator('text=Dashboard Member').first()).toBeVisible({ timeout: 15000 });
 }
 
 export async function loginAsAdmin(page: Page, email: string, password: string) {
   await page.goto('/admin');
-  await page.getByLabel('Email').fill(email);
-  await page.getByLabel('Password').fill(password);
-  await page.getByRole('button', { name: /masuk admin/i }).click();
+  const emailInput = page.getByPlaceholder('nama@email.com').or(page.getByLabel('Email')).first();
+  await emailInput.fill(email);
+  const passwordInput = page.getByPlaceholder('••••••••').or(page.getByLabel('Password')).first();
+  await passwordInput.fill(password);
+  const loginButton = page.getByRole('button', { name: /masuk admin/i }).or(page.getByRole('button', { name: /masuk/i })).first();
+  await loginButton.click();
 }
 
 export async function selectProduct(page: Page, productCode: string) {
