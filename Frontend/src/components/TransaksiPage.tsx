@@ -40,7 +40,7 @@ export default function TransaksiPage({ onNavigate }: TransaksiPageProps) {
     setError(null);
 
     try {
-      const response = await fetch(buildApiUrl('/api/orders'), {
+      const response = await fetch(buildApiUrl('/orders'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }

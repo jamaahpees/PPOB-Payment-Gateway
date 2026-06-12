@@ -22,7 +22,7 @@ export default function RegisterPage({ onNavigate }: RegisterPageProps) {
     setLoading(true);
 
     try {
-      const response = await fetch(buildApiUrl('/api/auth/register'), {
+      const response = await fetch(buildApiUrl('/auth/register'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

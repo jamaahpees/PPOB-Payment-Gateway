@@ -20,7 +20,7 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
     setLoading(true);
 
     try {
-      const response = await fetch(buildApiUrl('/api/auth/login'), {
+      const response = await fetch(buildApiUrl('/auth/login'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

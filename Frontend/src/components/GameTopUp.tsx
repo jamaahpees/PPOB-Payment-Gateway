@@ -308,7 +308,7 @@ export default function GameTopUp() {
       setCatalogError(null);
 
       try {
-        const response = await fetch(buildApiUrl('/api/catalog/products'));
+        const response = await fetch(buildApiUrl('/catalog/products'));
         if (!response.ok) {
           throw new Error(await readApiError(response, 'Gagal memuat produk Digiflazz.'));
         }
@@ -368,7 +368,7 @@ export default function GameTopUp() {
     setPaymentResult(null);
 
     try {
-      const orderResponse = await fetch(buildApiUrl('/api/orders'), {
+      const orderResponse = await fetch(buildApiUrl('/orders'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -398,7 +398,7 @@ export default function GameTopUp() {
       const createdOrder = (await orderResponse.json()) as OrderResponse;
       setOrderResult(createdOrder);
 
-      const paymentResponse = await fetch(buildApiUrl('/api/payments/midtrans/initialize'), {
+      const paymentResponse = await fetch(buildApiUrl('/payments/midtrans/initialize'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
