@@ -288,7 +288,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const mePayload = await readJsonApi<AccountResponse>('/api/auth/me', { headers: bearerHeaders(activeToken) });
+      const mePayload = await readJsonApi<AccountResponse>('/auth/me', { headers: bearerHeaders(activeToken) });
       setVerifiedUser(mePayload.user);
       setSession((currentSession) => {
         if (currentSession === null) return currentSession;
@@ -307,11 +307,11 @@ export default function AdminDashboard() {
       }
 
       const [productPayloadResult, pricingPayloadResult, usersPayload, monitoringPayload, digiflazzPayload] = await Promise.all([
-        readJsonApi<AdminProductsResponse>('/api/admin/catalog/products', { headers: bearerHeaders(activeToken) }),
-        readJsonApi<PricingRulesResponse>('/api/admin/catalog/pricing-rules', { headers: bearerHeaders(activeToken) }),
-        readJsonApi<AdminUsersResponse>('/api/admin/users', { headers: bearerHeaders(activeToken) }),
-        readJsonApi<AdminMonitoringResponse>('/api/admin/monitoring', { headers: bearerHeaders(activeToken) }),
-        readJsonApi<DigiflazzOperationsResponse>('/api/admin/digiflazz/operations', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<AdminProductsResponse>('/admin/catalog/products', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<PricingRulesResponse>('/admin/catalog/pricing-rules', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<AdminUsersResponse>('/admin/users', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<AdminMonitoringResponse>('/admin/monitoring', { headers: bearerHeaders(activeToken) }),
+        readJsonApi<DigiflazzOperationsResponse>('/admin/digiflazz/operations', { headers: bearerHeaders(activeToken) }),
       ]);
       setProducts(productPayloadResult.products);
       setPricingRules(pricingPayloadResult.pricing_rules);
@@ -353,7 +353,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const payload = await readJsonApi<AdminProductResponse>('/api/admin/catalog/products', {
+      const payload = await readJsonApi<AdminProductResponse>('/admin/catalog/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify(productPayload(productForm)),
@@ -375,7 +375,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const payload = await readJsonApi<AdminProductResponse>(`/api/admin/catalog/products/${product.id}`, {
+      const payload = await readJsonApi<AdminProductResponse>(`/admin/catalog/products/${product.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify(changes),
@@ -400,7 +400,7 @@ export default function AdminDashboard() {
       const categoryProducts = products.filter((product) => product.category === categoryImageForm.category);
       const updatedProducts = await Promise.all(
         categoryProducts.map((product) =>
-          readJsonApi<AdminProductResponse>(`/api/admin/catalog/products/${product.id}`, {
+          readJsonApi<AdminProductResponse>(`/admin/catalog/products/${product.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
             body: JSON.stringify({
@@ -431,7 +431,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      await readJsonApi(`/api/admin/catalog/products/${productId}`, {
+      await readJsonApi(`/admin/catalog/products/${productId}`, {
         method: 'DELETE',
         headers: bearerHeaders(token),
       });
@@ -458,7 +458,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const payload = await readJsonApi<PricingRuleResponse>('/api/admin/catalog/pricing-rules', {
+      const payload = await readJsonApi<PricingRuleResponse>('/admin/catalog/pricing-rules', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify(pricingPayload(pricingForm)),
@@ -480,7 +480,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const payload = await readJsonApi<PricingRuleResponse>(`/api/admin/catalog/pricing-rules/${rule.id}`, {
+      const payload = await readJsonApi<PricingRuleResponse>(`/admin/catalog/pricing-rules/${rule.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify(changes),
@@ -501,7 +501,7 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const payload = await readJsonApi<AccountResponse>(`/api/admin/users/${user.id}/reseller/${action}`, {
+      const payload = await readJsonApi<AccountResponse>(`/admin/users/${user.id}/reseller/${action}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify({}),
@@ -522,12 +522,12 @@ export default function AdminDashboard() {
     setNotice(null);
 
     try {
-      const syncPayload = await readJsonApi<DigiflazzSyncResponse>('/api/admin/catalog/digiflazz/price-list/sync', {
+      const syncPayload = await readJsonApi<DigiflazzSyncResponse>('/admin/catalog/digiflazz/price-list/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify({}),
       });
-      const opsPayload = await readJsonApi<DigiflazzOperationsResponse>('/api/admin/digiflazz/operations', { headers: bearerHeaders(token) });
+      const opsPayload = await readJsonApi<DigiflazzOperationsResponse>('/admin/digiflazz/operations', { headers: bearerHeaders(token) });
       setDigiflazzOps(opsPayload);
       setNotice(`Sinkron Digiflazz selesai: ${syncPayload.product_count} produk, ${syncPayload.active_count} aktif.`);
       await loadAdminData(token);
@@ -580,7 +580,7 @@ export default function AdminDashboard() {
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-wider text-rose-600">Akses ditolak</p>
                 <h1 className="mt-2 text-3xl font-extrabold text-slate-900">Role admin diperlukan.</h1>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">/api/auth/me mengembalikan role {roleLabel(verifiedUser?.role ?? session.user.role)}. Kontrol produk, margin, user, dan operasional disembunyikan sampai backend memverifikasi admin.</p>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">/auth/me mengembalikan role {roleLabel(verifiedUser?.role ?? session.user.role)}. Kontrol produk, margin, user, dan operasional disembunyikan sampai backend memverifikasi admin.</p>
               </div>
             </div>
           </div>
@@ -612,9 +612,9 @@ export default function AdminDashboard() {
         {(error || notice) && <div className={`rounded-2xl border p-4 text-sm font-semibold ${error ? 'border-rose-100 bg-rose-50 text-rose-700' : 'border-emerald-100 bg-emerald-50 text-emerald-700'}`} data-testid={error ? 'admin-error' : 'admin-notice'}>{error ?? notice}</div>}
 
         <div className="grid gap-6 lg:grid-cols-3">
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-2xl bg-amber-50 p-3 text-amber-600"><Boxes size={22} /></div><div><p className="text-xs font-extrabold uppercase tracking-wider text-slate-500">Catalog status</p><h2 className="text-xl font-extrabold text-slate-900">{activeProducts} produk aktif</h2></div></div><p className="mt-4 text-sm leading-6 text-slate-500">Status read-only dari /api/admin/catalog/products; backend tetap pemilik data harga dasar dan status aktif.</p></article>
+          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-2xl bg-amber-50 p-3 text-amber-600"><Boxes size={22} /></div><div><p className="text-xs font-extrabold uppercase tracking-wider text-slate-500">Catalog status</p><h2 className="text-xl font-extrabold text-slate-900">{activeProducts} produk aktif</h2></div></div><p className="mt-4 text-sm leading-6 text-slate-500">Status read-only dari /admin/catalog/products; backend tetap pemilik data harga dasar dan status aktif.</p></article>
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-2xl bg-sky-50 p-3 text-sky-600"><SlidersHorizontal size={22} /></div><div><p className="text-xs font-extrabold uppercase tracking-wider text-slate-500">Margin rules</p><h2 className="text-xl font-extrabold text-slate-900">{activePricingRules} rule aktif</h2></div></div><p className="mt-4 text-sm leading-6 text-slate-500">Pantauan margin bersumber dari API pricing admin; frontend hanya mengirim perubahan, bukan menghitung harga final.</p></article>
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600"><BarChart3 size={22} /></div><div><p className="text-xs font-extrabold uppercase tracking-wider text-slate-500">Operational logs</p><h2 className="text-xl font-extrabold text-slate-900">{monitoring?.summary.transaction_count ?? 0} transaksi</h2></div></div><p className="mt-4 text-sm leading-6 text-slate-500" data-testid="admin-ops-panel">Monitoring read-only dari /api/admin/monitoring mencakup {monitoring?.summary.webhook_count ?? 0} webhook, {monitoring?.summary.failed_webhook_count ?? 0} webhook gagal, dan {resellerRequests} request reseller.</p></article>
+          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-2xl bg-emerald-50 p-3 text-emerald-600"><BarChart3 size={22} /></div><div><p className="text-xs font-extrabold uppercase tracking-wider text-slate-500">Operational logs</p><h2 className="text-xl font-extrabold text-slate-900">{monitoring?.summary.transaction_count ?? 0} transaksi</h2></div></div><p className="mt-4 text-sm leading-6 text-slate-500" data-testid="admin-ops-panel">Monitoring read-only dari /admin/monitoring mencakup {monitoring?.summary.webhook_count ?? 0} webhook, {monitoring?.summary.failed_webhook_count ?? 0} webhook gagal, dan {resellerRequests} request reseller.</p></article>
         </div>
 
         <section className="rounded-3xl border border-amber-100 bg-white p-6 shadow-sm" data-testid="digiflazz-ops-panel">

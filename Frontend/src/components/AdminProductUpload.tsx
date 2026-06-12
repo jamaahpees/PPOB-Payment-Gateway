@@ -49,7 +49,7 @@ export function AdminProductUpload({ token, disabled, onUploaded }: AdminProduct
     setError(null);
 
     try {
-      const payload = await readJsonApi<UploadResponse>('/api/admin/products/upload', {
+      const payload = await readJsonApi<UploadResponse>('/admin/products/upload', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...bearerHeaders(token) },
         body: JSON.stringify({ file_base64: await fileToBase64(file), file_name: file.name }),
