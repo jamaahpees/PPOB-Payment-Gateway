@@ -74,7 +74,7 @@ Untuk mempercepat pengerjaan secara paralel tanpa konflik merge, pekerjaan dibag
 
 ### AGENT 1: Hook & Env Foundation (Independent)
 
-- [ ] **A1-T1: Create .env.development with Midtrans config**
+- [x] **A1-T1: Create .env.development with Midtrans config**
   - File: `Frontend/.env.development` (NEW)
   - Content:
     ```
@@ -85,7 +85,7 @@ Untuk mempercepat pengerjaan secara paralel tanpa konflik merge, pekerjaan dibag
   - Update `Frontend/.env.production` & `Frontend/.env.example`
   - Ensure `.env` is gitignored
 
-- [ ] **A1-T2: Implement useMidtransSnap hook**
+- [x] **A1-T2: Implement useMidtransSnap hook**
   - File: `Frontend/src/hooks/useMidtransSnap.ts` (NEW)
   - Must export:
     ```typescript
@@ -108,7 +108,7 @@ Untuk mempercepat pengerjaan secara paralel tanpa konflik merge, pekerjaan dibag
 
 ### AGENT 2: GameTopUp Integration (Independent)
 
-- [ ] **A2-T1: Implement Midtrans Snap in GameTopUp.tsx**
+- [x] **A2-T1: Implement Midtrans Snap in GameTopUp.tsx**
   - File: `Frontend/src/components/GameTopUp.tsx`
   - Imports: `import { useMidtransSnap } from '../hooks/useMidtransSnap';`
   - Changes:
@@ -125,7 +125,7 @@ Untuk mempercepat pengerjaan secara paralel tanpa konflik merge, pekerjaan dibag
 
 ### AGENT 3: Checkout Integration (Independent)
 
-- [ ] **A3-T1: Implement Midtrans Snap in Checkout.tsx**
+- [x] **A3-T1: Implement Midtrans Snap in Checkout.tsx**
   - File: `Frontend/src/components/Checkout.tsx`
   - Imports: `import { useMidtransSnap } from '../hooks/useMidtransSnap';`
   - Changes:
@@ -144,7 +144,7 @@ Untuk mempercepat pengerjaan secara paralel tanpa konflik merge, pekerjaan dibag
 
 ## Final Merge & Verification Wave (Combined)
 
-- [ ] **M-T1: Run integration smoke tests**
+- [x] **M-T1: Run integration smoke tests**
   - Verify all 3 agents' code compiles together
   - Run type checks: `cd Frontend && npm run build`
 - [ ] **M-T2: Deploy and verify live on VPS**

@@ -4,3 +4,9 @@ wave=backend timestamp=2026-05-17T01:40:35.899Z
 health 200 ok
 wave=backend timestamp=2026-05-17T01:42:55.047Z
 health 200 ok
+wave=backend timestamp=2026-05-30T12:44:11.471Z
+health 200 unknown
+order 0e4e8d38-3f2f-458f-abd2-acb4960838fc INV-20260530-450524332013 pending_payment
+payment_init 201
+account_me 404
+member_transactions 404
