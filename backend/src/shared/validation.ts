@@ -137,8 +137,8 @@ export const createOrderSchema = z.object({
   }).int("amount_minor is required and must be a positive integer.").positive("amount_minor is required and must be a positive integer.").optional(),
   currency: z.string().trim().min(1).max(10).toUpperCase().optional().default("IDR"),
   customer_ref: z.string().trim().max(255).nullable().optional().default(null),
-  referral_code: z.string().trim().max(50).optional(),
-  discount_code: z.string().trim().max(50).optional(),
+  referral_code: z.string().trim().max(50).nullable().optional(),
+  discount_code: z.string().trim().max(50).nullable().optional(),
   metadata: z.record(z.string(), z.unknown(), {
     message: "metadata must be an object when provided."
   }).optional().default({}),
