@@ -177,7 +177,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
         const initResponse = await fetch(buildApiUrl('/payments/midtrans/initialize'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ order_id: result.order_id })
+          body: JSON.stringify({ order_id: result.order_id, idempotency_key: `web-${result.order_id}-${Date.now()}` })
         });
 
         const initResult = await initResponse.json();
