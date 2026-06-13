@@ -182,7 +182,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
 
         const initResult = await initResponse.json();
 
-        if (!initResponse.ok || !initResult.success) {
+        if (!initResponse.ok || !initResult.payment_id) {
           throw new Error(initResult.error || 'Failed to initialize payment');
         }
 
