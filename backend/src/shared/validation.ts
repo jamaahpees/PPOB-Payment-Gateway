@@ -128,13 +128,13 @@ export const createOrderSchema = z.object({
   product_id: z.string().trim().min(1).max(255).nullable().optional(),
   product_code: z.string({
     message: "product_code is required and must be a non-empty string."
-  }).trim().min(1, "product_code is required and must be a non-empty string.").max(255),
+  }).trim().min(1, "product_code is required and must be a non-empty string.").max(255).optional(),
   provider: z.string({
     message: "provider is required and must be a non-empty string."
-  }).trim().min(1, "provider is required and must be a non-empty string.").max(100),
+  }).trim().min(1, "provider is required and must be a non-empty string.").max(100).optional(),
   amount_minor: z.number({
     message: "amount_minor is required and must be a positive integer."
-  }).int("amount_minor is required and must be a positive integer.").positive("amount_minor is required and must be a positive integer."),
+  }).int("amount_minor is required and must be a positive integer.").positive("amount_minor is required and must be a positive integer.").optional(),
   currency: z.string().trim().min(1).max(10).toUpperCase().optional().default("IDR"),
   customer_ref: z.string().trim().max(255).nullable().optional().default(null),
   referral_code: z.string().trim().max(50).optional(),

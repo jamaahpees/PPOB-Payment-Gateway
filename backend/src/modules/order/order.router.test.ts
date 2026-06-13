@@ -315,14 +315,6 @@ describe("POST /api/orders", () => {
         message: "Invalid order payload.",
         details: [
           {
-            field: "product_code",
-            message: "product_code is required and must be a non-empty string."
-          },
-          {
-            field: "provider",
-            message: "provider is required and must be a non-empty string."
-          },
-          {
             field: "amount_minor",
             message: "amount_minor is required and must be a positive integer."
           },
