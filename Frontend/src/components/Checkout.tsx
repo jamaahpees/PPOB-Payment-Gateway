@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Tag, AlertCircle, CheckCircle, Loader2, X, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Tag, AlertCircle, CheckCircle, Loader2, X } from 'lucide-react';
 import { useMidtransSnap } from '../hooks/useMidtransSnap';
 import { buildApiUrl } from '../lib/api';
 
@@ -35,10 +35,9 @@ interface VoucherValidation {
   error?: string;
 }
 
-interface OrderItem {
+interface CustomerInfo {
   phone: string;
   email: string;
-  useSameAsFirst: boolean;
 }
 
 interface CheckoutProps {
@@ -55,10 +54,11 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
   const [isInitializingPayment, setIsInitializingPayment] = useState(false);
   const [paymentError, setPaymentError] = useState<string | null>(null);
 
-  const [quantity, setQuantity] = useState(1);
-  const [orderItems, setOrderItems] = useState<OrderItem[]>([
-    { phone: '', email: '', useSameAsFirst: false }
-  ]);
+  // Single order - quantity always 1
+  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
+    phone: '',
+    email: ''
+  });
   const [voucherCode, setVoucherCode] = useState('');
   const [voucherValidation, setVoucherValidation] = useState<VoucherValidation | null>(null);
   const [validatingVoucher, setValidatingVoucher] = useState(false);
@@ -68,39 +68,8 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
     ? product.reseller_price_minor 
     : product.base_price_minor;
 
-  const handleQuantityChange = (newQuantity: number) => {
-    if (newQuantity < 1) return;
-    
-    setQuantity(newQuantity);
-    
-    // Adjust order items array
-    const currentItems = [...orderItems];
-    if (newQuantity > currentItems.length) {
-      // Add new items
-      for (let i = currentItems.length; i < newQuantity; i++) {
-        currentItems.push({ phone: '', email: '', useSameAsFirst: false });
-      }
-    } else if (newQuantity < currentItems.length) {
-      // Remove excess items
-      currentItems.splice(newQuantity);
-    }
-    setOrderItems(currentItems);
-    
-    // Reset voucher validation when quantity changes
-    setVoucherValidation(null);
-  };
-
-  const updateOrderItem = (index: number, field: keyof OrderItem, value: string | boolean) => {
-    const updated = [...orderItems];
-    updated[index] = { ...updated[index], [field]: value };
-    
-    // If useSameAsFirst is checked, copy from first item
-    if (field === 'useSameAsFirst' && value === true && index > 0) {
-      updated[index].phone = orderItems[0].phone;
-      updated[index].email = orderItems[0].email;
-    }
-    
-    setOrderItems(updated);
+  const updateCustomerInfo = (field: keyof CustomerInfo, value: string) => {
+    setCustomerInfo(prev => ({ ...prev, [field]: value }));
   };
 
   const validateVoucher = async () => {
@@ -108,16 +77,15 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
 
     setValidatingVoucher(true);
     try {
-      const totalAmount = displayPrice * quantity;
-      
+      // Single item price (quantity always 1)
       const payload: any = {
         code: voucherCode.toUpperCase(),
-        amount: totalAmount
+        amount: displayPrice
       };
 
       if (isReseller && product.reseller_price_minor) {
-        payload.base_price = product.base_price_minor * quantity;
-        payload.reseller_price = product.reseller_price_minor * quantity;
+        payload.base_price = product.base_price_minor;
+        payload.reseller_price = product.reseller_price_minor;
       }
 
       const response = await fetch(`${API_BASE}/vouchers/validate`, {
@@ -145,63 +113,59 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
   };
 
   const handleCheckout = async () => {
-    // Validate all order items have phone numbers
-    const invalidItems = orderItems.filter(item => !item.phone.trim());
-    if (invalidItems.length > 0) {
-      alert('Please fill in phone numbers for all items');
+    // Validate phone number
+    if (!customerInfo.phone.trim()) {
+      alert('Please fill in phone number');
       return;
     }
 
     try {
-      // Prepare items for API
-      const items = orderItems.map(item => ({
-        product_id: product.id,
-        product_sku: product.sku_digiflazz || 'UNKNOWN',
-        product_name: product.name,
-        unit_price_minor: displayPrice,
-        customer_phone: item.phone,
-        customer_email: item.email || null,
-        metadata: {}
-      }));
-
-      // Prepare voucher data if valid
-      const voucherData = voucherValidation?.valid ? {
-        code: voucherCode,
-        id: voucherValidation.voucher?.id,
-        base_price: isReseller ? product.base_price_minor * quantity : undefined,
-        reseller_price: isReseller && product.reseller_price_minor ? product.reseller_price_minor * quantity : undefined
-      } : null;
-
-      // Get logged in user ID if available
-      let userId: string | null = null;
+      // Get logged in user token if available
+      let authToken: string | null = null;
       try {
         const sessionStr = window.localStorage.getItem('bayarku.auth.session');
         if (sessionStr) {
           const session = JSON.parse(sessionStr);
-          if (session?.user?.id) {
-            userId = session.user.id;
+          if (session?.access_token) {
+            authToken = session.access_token;
           }
         }
       } catch (e) {
         console.error('Failed to read session for checkout:', e);
       }
 
+      // Build headers with authorization if logged in
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+      if (authToken) {
+        headers['Authorization'] = `Bearer ${authToken}`;
+      }
+
+      // Calculate final amount after voucher (single item)
+      const finalAmount = voucherValidation?.calculation?.final_amount || displayPrice;
+
+      // Build payload for new modular /orders endpoint
       const payload = {
-        items,
-        voucher_code: voucherData,
-        user_id: userId
+        product_id: product.id,
+        product_code: product.sku_digiflazz || null,
+        provider: product.provider,
+        amount_minor: finalAmount,
+        currency: 'IDR',
+        customer_ref: customerInfo.phone || null,
+        referral_code: null,
+        discount_code: voucherValidation?.voucher?.code || null,
+        metadata: {}
       };
 
-      const response = await fetch(`${API_BASE}/orders/create`, {
+      const response = await fetch(buildApiUrl('/orders'), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify(payload)
       });
 
       const result = await response.json();
 
-      if (!response.ok || !result.success) {
-        throw new Error(result.error || 'Failed to create order');
+      if (!response.ok || !result.order_id) {
+        throw new Error(result.error || result.message || 'Failed to create order');
       }
 
       // Initialize payment with Midtrans via POST /api/payments/midtrans/initialize
@@ -213,7 +177,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
         const initResponse = await fetch(buildApiUrl('/payments/midtrans/initialize'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ order_id: result.order.id })
+          body: JSON.stringify({ order_id: result.order_id })
         });
 
         const initResult = await initResponse.json();
@@ -232,7 +196,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
 
       setIsInitializingPayment(false);
 
-      const invoiceCode = result.order.invoice_code;
+      const invoiceCode = result.invoice_code;
 
       pay(payToken, {
         onSuccess: (snapRes) => {
@@ -250,11 +214,10 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
         }
       });
 
-      // Pass order data to parent
+      // Pass order data to parent (single item)
       onCheckout({
-        order: result.order,
-        items: result.items,
-        summary: result.summary
+        order: { id: result.order_id, invoice_code: result.invoice_code },
+        summary: { total_amount: finalAmount, quantity: 1 }
       });
 
     } catch (error: any) {
@@ -327,91 +290,38 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
                 )}
               </div>
             </div>
-            
-            {/* Quantity Selector */}
-            <div className="mt-4 pt-4 border-t border-slate-700">
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
-                Quantity
-              </label>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => handleQuantityChange(quantity - 1)}
-                  disabled={quantity <= 1}
-                  className="p-2 bg-slate-700 hover:bg-slate-600 disabled:bg-slate-800 disabled:text-slate-600 text-white rounded-lg transition"
-                >
-                  <Minus size={20} />
-                </button>
-                <span className="text-2xl font-black text-white min-w-[3rem] text-center">
-                  {quantity}
-                </span>
-                <button
-                  onClick={() => handleQuantityChange(quantity + 1)}
-                  className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition"
-                >
-                  <Plus size={20} />
-                </button>
-                <span className="text-sm text-slate-400 ml-2">
-                  Total: {formatRupiah(displayPrice * quantity)}
-                </span>
-              </div>
-            </div>
           </div>
 
-          {/* Customer Info - Multiple Forms */}
-          <div className="space-y-4">
+          {/* Customer Info - Single Form */}
+          <div className="bg-slate-800/30 border border-slate-700 rounded-xl p-4 space-y-3">
             <h3 className="font-bold text-white">Customer Information</h3>
-            <p className="text-sm text-slate-400">
-              {quantity > 1 ? `Fill in details for ${quantity} items` : 'Fill in customer details'}
-            </p>
-            
-            {orderItems.map((item, index) => (
-              <div key={index} className="bg-slate-800/30 border border-slate-700 rounded-xl p-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-cyan-400">Item #{index + 1}</h4>
-                  {index > 0 && (
-                    <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={item.useSameAsFirst}
-                        onChange={(e) => updateOrderItem(index, 'useSameAsFirst', e.target.checked)}
-                        className="w-4 h-4 rounded border-slate-600 bg-slate-700 text-cyan-500 focus:ring-cyan-500"
-                      />
-                      Same as first
-                    </label>
-                  )}
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      value={item.phone}
-                      onChange={(e) => updateOrderItem(index, 'phone', e.target.value)}
-                      disabled={index > 0 && item.useSameAsFirst}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-cyan-500 disabled:bg-slate-800 disabled:text-slate-500"
-                      placeholder="08123456789"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
-                      Email (optional)
-                    </label>
-                    <input
-                      type="email"
-                      value={item.email}
-                      onChange={(e) => updateOrderItem(index, 'email', e.target.value)}
-                      disabled={index > 0 && item.useSameAsFirst}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-cyan-500 disabled:bg-slate-800 disabled:text-slate-500"
-                      placeholder="email@example.com"
-                    />
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  value={customerInfo.phone}
+                  onChange={(e) => updateCustomerInfo('phone', e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-cyan-500"
+                  placeholder="08123456789"
+                  required
+                />
               </div>
-            ))}
+              <div>
+                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                  Email (optional)
+                </label>
+                <input
+                  type="email"
+                  value={customerInfo.email}
+                  onChange={(e) => updateCustomerInfo('email', e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-cyan-500"
+                  placeholder="email@example.com"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Voucher Input */}
@@ -516,18 +426,8 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
             <h3 className="font-bold text-white mb-4">Payment Summary</h3>
             
             <div className="flex justify-between text-slate-300">
-              <span>Price per item</span>
+              <span>Price</span>
               <span className="font-bold">{formatRupiah(displayPrice)}</span>
-            </div>
-
-            <div className="flex justify-between text-slate-300">
-              <span>Quantity</span>
-              <span className="font-bold">x {quantity}</span>
-            </div>
-
-            <div className="flex justify-between text-slate-300">
-              <span>Subtotal</span>
-              <span className="font-bold">{formatRupiah(displayPrice * quantity)}</span>
             </div>
 
             {voucherValidation?.valid && discountAmount > 0 && (
@@ -550,7 +450,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
           {/* Checkout Button */}
           <button
             onClick={handleCheckout}
-            disabled={orderItems.some(item => !item.phone.trim()) || isInitializingPayment}
+            disabled={!customerInfo.phone.trim() || isInitializingPayment}
             className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-slate-700 disabled:to-slate-700 disabled:text-slate-500 text-white font-black rounded-xl transition text-lg flex items-center justify-center gap-2"
           >
             {isInitializingPayment ? (
@@ -559,7 +459,7 @@ export default function Checkout({ product, userRole = 'customer', onClose, onCh
                 Initializing Payment...
               </>
             ) : (
-              `Complete Purchase (${quantity} ${quantity > 1 ? 'items' : 'item'})`
+              'Complete Purchase'
             )}
           </button>
         </div>
